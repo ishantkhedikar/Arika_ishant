@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arika Collabs | Instagram</title>
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/pages/instagram.css">
+</head>
+
+<body data-page="instagram">
+
+  <div id="header-placeholder"></div>
+
+  <!-- ============ HERO ============ -->
+  <section class="section ig-hero">
+    <div class="container ig-hero__grid">
+      <div>
+        <span class="eyebrow">On Instagram</span>
+        <h1>Behind the scenes. Real stories. <span class="text-gold">Daily inspiration.</span></h1>
+        <p>Follow us on Instagram for the latest campaigns, creator content, industry insights and a glimpse into life at Arika Collabs.</p>
+        <a href="https://instagram.com/arikacollabs" target="_blank" class="btn btn-primary">Follow @arikacollabs &rarr;</a>
+      </div>
+      <div class="ig-hero__visual"></div>
+    </div>
+  </section>
+
+  <!-- ============ STATS ============ -->
+  <section class="container ig-stats">
+    <div><span class="ig-stat-icon">&#128247;</span><strong>12K+</strong><span>Followers</span></div>
+    <div><span class="ig-stat-icon">&#10084;</span><strong>250+</strong><span>Posts</span></div>
+    <div><span class="ig-stat-icon">&#128101;</span><strong>Real</strong><span>Campaigns</span></div>
+    <div><span class="ig-stat-icon">&#10022;</span><strong>A Creative</strong><span>Community</span></div>
+  </section>
+
+  <!-- ============ FILTERS ============ -->
+  <section class="container filter-bar">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="campaigns">Campaigns</button>
+      <button class="filter-tab" data-filter="behind-the-scenes">Behind the Scenes</button>
+      <button class="filter-tab" data-filter="creator-stories">Creator Stories</button>
+      <button class="filter-tab" data-filter="tips-insights">Tips & Insights</button>
+      <button class="filter-tab" data-filter="team">Team</button>
+    </div>
+  </section>
+
+  <!-- ============ POST GRID ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid ig-grid">
+        <div class="ig-tile" data-category="campaigns" style="background-image:url('assets/images/ig-tile-1.svg')"></div>
+        <div class="ig-tile" data-category="campaigns" style="background-image:url('assets/images/ig-tile-2.svg')"></div>
+        <div class="ig-tile ig-tile--text" data-category="tips-insights">Great brands work with great creators.</div>
+        <div class="ig-tile" data-category="behind-the-scenes" style="background-image:url('assets/images/ig-tile-3.svg')"></div>
+        <div class="ig-tile ig-tile--text" data-category="tips-insights">Authentic content creates real connections.</div>
+        <div class="ig-tile" data-category="behind-the-scenes" style="background-image:url('assets/images/ig-tile-4.svg')"></div>
+        <div class="ig-tile" data-category="campaigns" style="background-image:url('assets/images/ig-tile-5.svg')"></div>
+        <div class="ig-tile" data-category="creator-stories" style="background-image:url('assets/images/ig-tile-6.svg')"></div>
+        <div class="ig-tile ig-tile--text" data-category="tips-insights">Ideas · Creativity · Campaigns · Impact</div>
+        <div class="ig-tile" data-category="team" style="background-image:url('assets/images/ig-tile-1.svg')"></div>
+        <div class="ig-tile ig-tile--text" data-category="tips-insights">Creators turn ideas into impact.</div>
+        <div class="ig-tile" data-category="campaigns" style="background-image:url('assets/images/ig-tile-2.svg')"></div>
+      </div>
+
+      <div class="text-center" style="margin-top: var(--space-2xl);">
+        <a href="https://instagram.com/arikacollabs" target="_blank" class="btn btn-outline">Follow Us on Instagram &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+  <script src="js/our-work.js"></script> <!-- reuses the same generic filter-tab logic -->
+</body>
+</html>

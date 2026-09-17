@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arika Collabs | Creator Dashboard</title>
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages/dashboard.css">
+</head>
+
+<!-- Dashboard has its own layout: sidebar + topbar, NOT the public site header/footer -->
+<body class="dashboard-page">
+
+  <div class="dashboard-shell">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar">
+      <a href="index.html" class="logo">ARIKA <span>COLLABS</span></a>
+
+      <nav class="sidebar-nav">
+        <a href="dashboard.html" class="sidebar-link active" data-page="dashboard">
+          <span class="icon">&#9638;</span> Dashboard
+        </a>
+        <a href="collaborations.html" class="sidebar-link" data-page="collaborations">
+          <span class="icon">&#128279;</span> Collaborations
+        </a>
+        <a href="profile.html" class="sidebar-link" data-page="profile">
+          <span class="icon">&#128100;</span> Profile
+        </a>
+        <a href="contact.html" class="sidebar-link" data-page="contact">
+          <span class="icon">&#9993;</span> Contact Arika
+        </a>
+      </nav>
+
+      <a href="login.html" class="sidebar-link sidebar-logout">
+        <span class="icon">&#8630;</span> Logout
+      </a>
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <div class="dashboard-main">
+
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <a href="index.html" class="btn btn-outline btn-sm">&#127760; Visit Website</a>
+
+        <div class="topbar-right">
+          <button class="icon-btn" aria-label="Notifications">&#128276;</button>
+          <div class="user-chip">
+            <img src="assets/images/avatar-priya.svg" alt="Priya">
+            <div class="user-meta">
+              Hi, Priya
+              <small>&#9662;</small>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Greeting -->
+      <div class="dashboard-greeting">
+        <h1>Good morning, Priya &#128075;</h1>
+        <p>Here's what's happening with your collaborations.</p>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="grid stat-grid">
+        <div class="card stat-card">
+          <span class="stat-icon">&#128203;</span>
+          <div>
+            <strong>2</strong>
+            <span>Active Collaborations</span>
+          </div>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-icon">&#128197;</span>
+          <div>
+            <strong>1</strong>
+            <span>Upcoming</span>
+          </div>
+        </div>
+        <div class="card stat-card">
+          <span class="stat-icon">&#9989;</span>
+          <div>
+            <strong>8</strong>
+            <span>Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two-column: Recent Collaborations + Quick Actions -->
+      <div class="dashboard-columns">
+
+        <div class="card">
+          <div class="flex-between">
+            <h3>Recent Collaborations</h3>
+            <a href="collaborations.html" class="link-muted">View All &rarr;</a>
+          </div>
+
+          <ul class="collab-list">
+            <li class="collab-item">
+              <img src="assets/images/brand-velvetluxe.svg" alt="Velvet Luxe" class="collab-thumb">
+              <div class="collab-info">
+                <strong>Velvet Luxe</strong>
+                <span>Instagram Reel · Content Creation</span>
+              </div>
+              <span class="badge badge--progress">In Progress</span>
+            </li>
+            <li class="collab-item">
+              <img src="assets/images/brand-glowhaus.svg" alt="Glow Haus" class="collab-thumb">
+              <div class="collab-info">
+                <strong>Glow Haus</strong>
+                <span>Instagram Story · Product Feature</span>
+              </div>
+              <span class="badge badge--pending">Under Review</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Quick Actions</h3>
+          <ul class="quick-actions">
+            <li><a href="collaborations.html">&#128279; View Collaborations</a></li>
+            <li><a href="profile.html">&#9998; Edit Profile</a></li>
+            <li><a href="contact.html">&#9993; Contact Arika</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

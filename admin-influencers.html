@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arika Collabs | Admin - Influencers</title>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages/dashboard.css">
+</head>
+<body class="dashboard-page">
+  <div class="dashboard-shell">
+
+    <aside class="sidebar">
+      <a href="index.html" class="logo">ARIKA <span>COLLABS</span></a>
+      <nav class="sidebar-nav">
+        <a href="admin-dashboard.html" class="sidebar-link" data-page="dashboard"><span class="icon">&#9638;</span> Dashboard</a>
+        <a href="admin-influencers.html" class="sidebar-link active" data-page="influencers"><span class="icon">&#128100;</span> Influencers</a>
+        <a href="admin-campaigns.html" class="sidebar-link" data-page="campaigns"><span class="icon">&#128226;</span> Campaigns</a>
+        <a href="admin-collaborations.html" class="sidebar-link" data-page="collaborations"><span class="icon">&#128279;</span> Collaborations</a>
+        <a href="admin-inquiries.html" class="sidebar-link" data-page="inquiries"><span class="icon">&#128172;</span> Inquiries</a>
+        <a href="admin-content.html" class="sidebar-link" data-page="content"><span class="icon">&#128247;</span> Content</a>
+      </nav>
+      <a href="admin-login.html" class="sidebar-link sidebar-logout"><span class="icon">&#8630;</span> Logout</a>
+    </aside>
+
+    <div class="dashboard-main">
+      <header class="dashboard-topbar">
+        <a href="index.html" class="btn btn-outline btn-sm">&#127760; Visit Website</a>
+        <div class="topbar-right">
+          <button class="icon-btn" aria-label="Notifications">&#128276;</button>
+          <div class="user-chip">
+            <img src="assets/images/avatar-admin.svg" alt="Admin">
+            <div class="user-meta">Admin <small>&#9662;</small></div>
+          </div>
+        </div>
+      </header>
+
+      <div class="dashboard-greeting">
+        <h1>Influencers</h1>
+        <p>Manage creator applications and your onboarded influencer roster.</p>
+      </div>
+
+      <div class="card">
+        <table class="data-table">
+          <thead>
+            <tr><th>Creator</th><th>Category</th><th>Applied</th><th>Status</th><th>Actions</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><img src="assets/images/avatar-priya.svg" class="table-avatar" alt="Priya Sharma">Priya Sharma</td>
+              <td>Fashion</td><td>2 days ago</td>
+              <td><span class="badge badge--pending">Pending</span></td>
+              <td class="table-actions"><a href="#">Approve</a><a href="#">Reject</a></td>
+            </tr>
+            <tr>
+              <td><img src="assets/images/avatar-riya.svg" class="table-avatar" alt="Riya Mehta">Riya Mehta</td>
+              <td>Beauty</td><td>3 days ago</td>
+              <td><span class="badge badge--pending">Pending</span></td>
+              <td class="table-actions"><a href="#">Approve</a><a href="#">Reject</a></td>
+            </tr>
+            <tr>
+              <td><img src="assets/images/avatar-aman.svg" class="table-avatar" alt="Aman Verma">Aman Verma</td>
+              <td>Fitness</td><td>4 days ago</td>
+              <td><span class="badge badge--progress">Under Review</span></td>
+              <td class="table-actions"><a href="#">Approve</a><a href="#">Reject</a></td>
+            </tr>
+            <tr>
+              <td><img src="assets/images/avatar-neha.svg" class="table-avatar" alt="Neha Kapoor">Neha Kapoor</td>
+              <td>Lifestyle</td><td>1 week ago</td>
+              <td><span class="badge badge--success">Approved</span></td>
+              <td class="table-actions"><a href="#">View Profile</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

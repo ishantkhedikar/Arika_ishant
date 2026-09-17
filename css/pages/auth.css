@@ -1,0 +1,207 @@
+/* ==========================================================================
+   AUTH PAGES (Login / Register) — dark split-screen theme
+   This page intentionally overrides the light theme with a dark panel,
+   matching the "Creator Login" mockup in the brand PDF.
+   ========================================================================== */
+
+body.auth-page {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.auth-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+}
+
+/* ---------- LEFT: FORM PANEL (dark) ---------- */
+.auth-panel {
+  background-color: var(--color-charcoal-black);
+  color: var(--color-pure-white);
+  padding: var(--space-2xl) var(--space-3xl);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.auth-panel .logo {
+  color: var(--color-signature-gold);
+  margin-bottom: var(--space-2xl);
+}
+.auth-panel .logo span {
+  color: var(--color-pure-white);
+}
+
+.auth-card {
+  max-width: 400px;
+  width: 100%;
+  margin: auto 0;
+}
+
+.auth-tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  margin-bottom: var(--space-xl);
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 10px;
+  border-radius: var(--radius-pill);
+  color: var(--color-light-gray);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.auth-tab.active {
+  background: var(--color-signature-gold);
+  color: var(--color-charcoal-black);
+}
+
+.auth-form {
+  display: none;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.auth-form.active {
+  display: flex;
+}
+
+.auth-form h2 {
+  color: var(--color-pure-white);
+  font-size: 1.5rem;
+}
+
+.auth-subtitle {
+  color: var(--color-light-gray);
+  font-size: 0.9rem;
+  margin-bottom: var(--space-sm);
+}
+
+.auth-form label {
+  color: var(--color-light-gray);
+  margin-bottom: 0;
+}
+
+.auth-form input {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--color-pure-white);
+}
+
+.auth-form input::placeholder {
+  color: var(--color-gray);
+}
+
+.input-with-icon {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-light-gray);
+}
+
+.auth-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-light-gray);
+  margin-bottom: 0;
+}
+
+.link-muted {
+  color: var(--color-signature-gold);
+}
+
+.btn-full {
+  width: 100%;
+  justify-content: center;
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: var(--color-gray);
+  font-size: 0.75rem;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+.auth-divider span {
+  padding: 0 var(--space-sm);
+}
+
+.auth-form .btn-outline {
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--color-pure-white);
+}
+.auth-form .btn-outline:hover {
+  border-color: var(--color-signature-gold);
+  color: var(--color-signature-gold);
+}
+
+.auth-switch {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--color-light-gray);
+}
+.auth-switch a {
+  color: var(--color-signature-gold);
+  font-weight: 600;
+}
+
+/* ---------- RIGHT: VISUAL PANEL ---------- */
+.auth-visual {
+  background: url('../../assets/images/dark-quote-visual.svg') center/cover;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3xl);
+}
+
+.auth-visual__overlay h3 {
+  color: var(--color-pure-white);
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-bottom: var(--space-md);
+}
+
+.auth-visual__overlay p {
+  color: var(--color-gold-light);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .auth-split {
+    grid-template-columns: 1fr;
+  }
+  .auth-visual {
+    display: none;
+  }
+  body.auth-page {
+    height: auto;
+    overflow: auto;
+  }
+}

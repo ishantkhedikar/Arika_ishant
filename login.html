@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arika Collabs | Creator Login</title>
+
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/pages/auth.css">
+</head>
+
+<!-- No shared site header/footer on auth screens — this is a full-screen split layout -->
+<body class="auth-page">
+
+  <div class="auth-split">
+
+    <!-- ============ LEFT PANEL: FORM ============ -->
+    <div class="auth-panel">
+      <a href="index.html" class="logo">ARIKA <span>COLLABS</span></a>
+
+      <div class="auth-card">
+
+        <!-- Tabs -->
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Login</button>
+          <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+
+        <!-- ---------- LOGIN FORM ---------- -->
+        <form class="auth-form active" id="login-form">
+          <h2>Welcome back, Creator</h2>
+          <p class="auth-subtitle">Log in to access your dashboard.</p>
+
+          <label for="login-email">Email address</label>
+          <input type="email" id="login-email" placeholder="you@example.com" required>
+
+          <label for="login-password">Password</label>
+          <div class="input-with-icon">
+            <input type="password" id="login-password" placeholder="••••••••" required>
+            <button type="button" class="toggle-password" aria-label="Show password">&#128065;</button>
+          </div>
+
+          <div class="auth-row">
+            <label class="checkbox-label">
+              <input type="checkbox" id="remember-me" style="width:auto;">
+              Remember me
+            </label>
+            <a href="forgot-password.html" class="link-muted">Forgot password?</a>
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-full">Login &rarr;</button>
+
+          <div class="auth-divider"><span>OR</span></div>
+
+          <button type="button" class="btn btn-outline btn-full">Continue with Google</button>
+          <button type="button" class="btn btn-outline btn-full">Continue with Instagram</button>
+
+          <p class="auth-switch">
+            Don't have an account? <a href="#" data-switch-to="register">Register here</a>
+          </p>
+        </form>
+
+        <!-- ---------- REGISTER FORM ---------- -->
+        <form class="auth-form" id="register-form">
+          <h2>Join Arika Collabs</h2>
+          <p class="auth-subtitle">Create your creator account to get started.</p>
+
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" placeholder="Your full name" required>
+
+          <label for="reg-email">Email address</label>
+          <input type="email" id="reg-email" placeholder="you@example.com" required>
+
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" placeholder="Create a password" required>
+
+          <button type="submit" class="btn btn-gold btn-full">Register &rarr;</button>
+
+          <p class="auth-switch">
+            Already have an account? <a href="#" data-switch-to="login">Login here</a>
+          </p>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- ============ RIGHT PANEL: IMAGE + QUOTE ============ -->
+    <div class="auth-visual">
+      <div class="auth-visual__overlay">
+        <h3>CREATE<br>COLLABORATE<br>GROW</h3>
+        <p>A brighter tomorrow together.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

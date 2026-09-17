@@ -1,0 +1,83 @@
+/* ==========================================================================
+   ARIKA COLLABS — DESIGN TOKENS
+   Light Theme Color Palette (from brand guide PDF)
+   Import this file FIRST in every page, before any other CSS.
+   ========================================================================== */
+
+:root {
+
+  /* ---------- PRIMARY COLORS ---------- */
+  --color-signature-gold: #D4AF37; /* Primary brand color, CTAs, highlights */
+  --color-gold-light:     #EED9A4; /* Hover states, subtle accents */
+  --color-cream-white:    #FFFDF7; /* Main background color */
+  --color-warm-ivory:     #F8F4EB; /* Section backgrounds, containers */
+  --color-sand-beige:     #EADCC8; /* Cards, muted sections */
+  --color-soft-rose:      #EBC9B4; /* Secondary accent, brand elements */
+
+  /* ---------- TEXT & NEUTRALS ---------- */
+  --color-charcoal-black: #1A1A1A; /* Headings, important text */
+  --color-dark-gray:      #4A4A4A; /* Body text, subheadings */
+  --color-gray:           #777777; /* Secondary text, icons */
+  --color-light-gray:     #C9C9C9; /* Borders, dividers, muted elements */
+  --color-extra-light:    #E9E9E9; /* Input fields, background blocks */
+  --color-pure-white:     #FFFFFF; /* Cards, modals, clean surfaces */
+
+  /* ---------- ACCENT COLORS ---------- */
+  --color-rose-gold:  #DDA291; /* Accent elements, icons, links */
+  --color-peach:      #FADDC8; /* Soft highlights, badges */
+  --color-sage-green: #8CA77F; /* Success, positive states */
+  --color-sky-blue:   #D6E6F7; /* Info, tips, links (alt) */
+  --color-amber:      #F5A623; /* Warnings, pending */
+  --color-error-red:  #FF5252; /* Errors, alerts */
+
+  /* ---------- GRADIENTS ---------- */
+  --gradient-gold:      linear-gradient(135deg, #F9E7C7 0%, #D4AF37 100%);
+  --gradient-rose-gold: linear-gradient(135deg, #FDE8D9 0%, #DDA291 100%);
+  --gradient-cream:     linear-gradient(135deg, #FFFFFF 0%, #F8F4EB 100%);
+
+  /* ---------- SEMANTIC ALIASES ----------
+     Use these in page CSS instead of raw color names above,
+     so a future palette tweak only needs edits in ONE place. */
+  --color-primary:        var(--color-signature-gold);
+  --color-primary-hover:  var(--color-gold-light);
+  --color-bg-page:        var(--color-cream-white);
+  --color-bg-section:     var(--color-warm-ivory);
+  --color-bg-card:        var(--color-pure-white);
+  --color-bg-card-muted:  var(--color-sand-beige);
+  --color-text-heading:   var(--color-charcoal-black);
+  --color-text-body:      var(--color-dark-gray);
+  --color-text-muted:     var(--color-gray);
+  --color-border:         var(--color-light-gray);
+  --color-input-bg:       var(--color-extra-light);
+  --color-success:        var(--color-sage-green);
+  --color-warning:        var(--color-amber);
+  --color-error:          var(--color-error-red);
+  --color-link-alt:       var(--color-sky-blue);
+  --color-accent:         var(--color-rose-gold);
+  --color-badge:          var(--color-peach);
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* ---------- SPACING SCALE ---------- */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+  --space-3xl: 96px;
+
+  /* ---------- RADIUS & SHADOW ---------- */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 4px 20px rgba(26, 26, 26, 0.06);
+  --shadow-card: 0 8px 30px rgba(26, 26, 26, 0.08);
+
+  /* ---------- LAYOUT ---------- */
+  --container-max: 1200px;
+  --header-height: 80px;
+}

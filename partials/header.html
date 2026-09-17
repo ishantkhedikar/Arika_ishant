@@ -1,0 +1,27 @@
+<!--
+  HEADER PARTIAL — logged-out state
+  Loaded into <div id="header-placeholder"></div> by js/main.js
+
+  IMPORTANT: after this loads, main.js also runs highlightActiveNavLink()
+  to underline whichever page you're on, based on data-page attributes.
+-->
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="logo">
+      ARIKA <span>COLLABS</span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="index.html" data-page="home">Home</a>
+      <a href="about.html" data-page="about">About</a>
+      <a href="our-work.html" data-page="our-work">Our Work</a>
+      <a href="instagram.html" data-page="instagram">Instagram</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+    </nav>
+
+    <div class="auth-buttons">
+      <a href="login.html" class="btn btn-outline">Login</a>
+      <a href="login.html#register" class="btn btn-primary">Register &rarr;</a>
+    </div>
+  </div>
+</header>
