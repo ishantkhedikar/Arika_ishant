@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Arika Collabs — Website Build (Complete Prototype)
 
 Every page from the sitemap PDF now exists and is linked together. This is a
@@ -159,3 +160,6 @@ git push -u origin main
 **Golden rule:** if you ever need to change variables.css, base.css, or
 header-footer.css, tell your collaborator first — every page depends on
 these three files.
+=======
+# Arika-Web
+>>>>>>> 5c58c8d68fd555e0c66380a098268aa301b3c368
