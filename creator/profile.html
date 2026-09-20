@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arika Collabs | My Profile</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/pages/creator-dashboard.css">
+  <link rel="stylesheet" href="../css/pages/creator-profile.css">
+</head>
+<body class="creator-dashboard creator-profile">
+
+<div class="db-bg" aria-hidden="true">
+  <div class="db-bg-blob db-bg-blob--1"></div>
+  <div class="db-bg-blob db-bg-blob--2"></div>
+  <div class="db-bg-blob db-bg-blob--3"></div>
+</div>
+
+<div class="db-overlay" id="db-overlay"></div>
+
+<div class="db-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="db-sidebar" id="db-sidebar" aria-label="Creator navigation">
+    <a href="../index.html" class="db-logo" aria-label="Arika Collabs home">
+      <span class="db-logo-main">ARIKA</span>
+      <span class="db-logo-sub">COLLABS</span>
+    </a>
+    <nav class="db-nav" aria-label="Main navigation">
+      <a href="dashboard.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor"/></svg>
+        </span>
+        Dashboard
+      </a>
+      <a href="collaborations.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Collaborations
+      </a>
+      <a href="profile.html" class="db-nav-item active" aria-current="page">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Profile
+      </a>
+      <a href="contact.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Contact Arika
+      </a>
+    </nav>
+    <div class="db-nav-divider" aria-hidden="true"></div>
+    <div class="db-logout">
+      <button class="db-nav-item" id="logout-btn" aria-label="Log out">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="db-main">
+
+    <header class="db-header">
+      <div class="db-header-left">
+        <button class="db-mobile-btn" id="db-menu-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-linecap="round"/></svg>
+        </button>
+        <a href="../index.html" class="db-visit-btn" aria-label="Visit Arika Collabs website">
+          Visit Website
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="db-header-right">
+        <button class="db-notif-btn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="db-notif-dot" aria-hidden="true"></span>
+        </button>
+        <div class="db-user-chip" id="user-chip" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+          <img src="../assets/images/avatar-priya.svg" alt="Priya Sharma" class="db-avatar" id="topbar-avatar">
+          <span class="db-user-name">Hi, <span>Priya</span></span>
+          <svg class="db-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="db-user-dropdown" id="user-dropdown" role="menu">
+            <a href="profile.html" class="db-dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor"/></svg>
+              My Profile
+            </a>
+            <a href="contact.html" class="db-dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round"/></svg>
+              Contact Arika
+            </a>
+            <div class="db-dropdown-divider" aria-hidden="true"></div>
+            <button class="db-dropdown-item" id="dropdown-logout" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke="currentColor" stroke-linecap="round"/></svg>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="db-content">
+
+      <!-- Page Hero -->
+      <div class="db-hero">
+        <div class="db-hero-left">
+          <span class="db-eyebrow">Creator Portal</span>
+          <h1 class="db-hero-heading">My Profile</h1>
+          <p class="db-hero-sub">Manage your profile, preferences and collaboration settings.</p>
+        </div>
+        <div class="db-hero-deco" aria-hidden="true">
+          <span class="db-deco-primary">Create</span>
+          <span class="db-deco-primary">Collaborate</span>
+          <span class="db-deco-primary">Grow</span>
+          <span class="db-deco-divider">&#47;</span>
+          <span class="db-deco-secondary">A Brighter</span>
+          <span class="db-deco-secondary">Tomorrow</span>
+          <span class="db-deco-secondary">Together.</span>
+          <span class="db-deco-star">&#10022;</span>
+        </div>
+      </div>
+
+      <!-- Profile layout: main + right sidebar -->
+      <div class="pf-layout">
+
+        <!-- LEFT: main column -->
+        <div>
+
+          <!-- Profile Hero Card -->
+          <div class="pf-hero-card">
+            <div class="pf-hero-inner">
+              <div class="pf-avatar-wrap">
+                <img src="../assets/images/avatar-priya.svg" alt="Priya Sharma" class="pf-avatar" id="pf-avatar-img">
+                <label class="pf-avatar-edit" for="pf-photo-input" aria-label="Change profile photo" title="Change photo">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </label>
+                <input type="file" id="pf-photo-input" accept="image/*" aria-label="Upload profile photo">
+              </div>
+
+              <div class="pf-hero-info">
+                <div class="pf-name-row">
+                  <h2 class="pf-name">Priya Sharma</h2>
+                  <span class="pf-verified">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Verified
+                  </span>
+                </div>
+                <p class="pf-role">Content Creator &nbsp;|&nbsp; Fashion &bull; Beauty &bull; Lifestyle</p>
+                <div class="pf-meta-row">
+                  <span class="pf-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    Mumbai, India
+                  </span>
+                  <span class="pf-meta-divider" aria-hidden="true"></span>
+                  <span class="pf-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+                    @priya.s
+                  </span>
+                  <span class="pf-meta-divider" aria-hidden="true"></span>
+                  <span class="pf-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    priya@example.com
+                  </span>
+                </div>
+              </div>
+
+              <div class="pf-hero-quote">
+                <p class="pf-quote-text">"Creating stories<br>that inspire and<br>make brands shine."</p>
+                <button class="pf-edit-photo-btn" id="pf-edit-photo-trigger">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Edit Photo
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Tabs -->
+          <div class="pf-tabs" role="tablist" aria-label="Profile sections">
+            <button class="pf-tab active" data-tab="personal" role="tab" aria-selected="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-linecap="round"/></svg>
+              Personal Info
+            </button>
+            <button class="pf-tab" data-tab="preferences" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Preferences
+            </button>
+            <button class="pf-tab" data-tab="social" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Social &amp; Audience
+            </button>
+            <button class="pf-tab" data-tab="portfolio" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-linecap="round"/><path d="M3 9h18M9 21V9" stroke="currentColor" stroke-linecap="round"/></svg>
+              Portfolio
+            </button>
+            <button class="pf-tab" data-tab="security" role="tab" aria-selected="false">
+              <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-linecap="round"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Security
+            </button>
+          </div>
+
+          <!-- TAB: Personal Info -->
+          <div class="pf-tab-panel active" id="tab-personal" role="tabpanel">
+            <div class="pf-form-grid">
+
+              <!-- Personal Information form -->
+              <div class="pf-form-card">
+                <h3 class="pf-form-card-title">Personal Information</h3>
+                <p class="pf-form-card-sub">Keep your basic information up to date.</p>
+
+                <div class="pf-field">
+                  <label class="pf-label" for="pf-fullname">Full Name</label>
+                  <input type="text" id="pf-fullname" class="pf-input" value="Priya Sharma" autocomplete="name">
+                </div>
+                <div class="pf-field">
+                  <label class="pf-label" for="pf-email">Email</label>
+                  <input type="email" id="pf-email" class="pf-input" value="priya@example.com" autocomplete="email">
+                </div>
+                <div class="pf-field">
+                  <label class="pf-label" for="pf-phone">Phone Number</label>
+                  <input type="tel" id="pf-phone" class="pf-input" value="+91 98765 43210" autocomplete="tel">
+                </div>
+                <div class="pf-field">
+                  <label class="pf-label" for="pf-location">Location</label>
+                  <input type="text" id="pf-location" class="pf-input" value="Mumbai, Maharashtra, India">
+                </div>
+                <div class="pf-field">
+                  <label class="pf-label" for="pf-bio">Bio</label>
+                  <textarea id="pf-bio" class="pf-textarea" maxlength="500" rows="4">Fashion, beauty and lifestyle creator passionate about authentic content and meaningful brand collaborations.</textarea>
+                  <span class="pf-char-count" id="pf-bio-count">100/500</span>
+                </div>
+
+                <button class="pf-save-btn" id="pf-save-personal">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Save Changes
+                </button>
+              </div>
+
+              <!-- Collaboration Preferences card (shown in Personal Info tab) -->
+              <div class="pf-form-card">
+                <h3 class="pf-form-card-title">Collaboration Preferences</h3>
+                <p class="pf-form-card-sub">Let us know what opportunities you're interested in.</p>
+
+                <div class="pf-pref-section">
+                  <p class="pf-pref-title">Availability Status</p>
+                  <div class="pf-avail-select-wrap">
+                    <span class="pf-avail-dot" aria-hidden="true"></span>
+                    <select class="pf-avail-select" id="pf-availability" aria-label="Availability status">
+                      <option value="available" selected>Currently Available</option>
+                      <option value="limited">Limited Availability</option>
+                      <option value="unavailable">Not Available</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="pf-pref-divider" aria-hidden="true"></div>
+
+                <div class="pf-pref-section">
+                  <p class="pf-pref-title">Interested In</p>
+                  <div class="pf-checkbox-list">
+                    <label class="pf-checkbox-item">
+                      <input type="checkbox" checked>
+                      <span class="pf-checkbox-box" aria-hidden="true"></span>
+                      <span class="pf-checkbox-text">
+                        <span class="pf-checkbox-label">Brand Collaborations</span>
+                        <span class="pf-checkbox-sub">Work with amazing brands</span>
+                      </span>
+                    </label>
+                    <label class="pf-checkbox-item">
+                      <input type="checkbox" checked>
+                      <span class="pf-checkbox-box" aria-hidden="true"></span>
+                      <span class="pf-checkbox-text">
+                        <span class="pf-checkbox-label">Instagram Paid Promotions</span>
+                        <span class="pf-checkbox-sub">Sponsored posts, reels, stories</span>
+                      </span>
+                    </label>
+                    <label class="pf-checkbox-item">
+                      <input type="checkbox" checked>
+                      <span class="pf-checkbox-box" aria-hidden="true"></span>
+                      <span class="pf-checkbox-text">
+                        <span class="pf-checkbox-label">Product Reviews</span>
+                        <span class="pf-checkbox-sub">Unboxing and product features</span>
+                      </span>
+                    </label>
+                    <label class="pf-checkbox-item">
+                      <input type="checkbox">
+                      <span class="pf-checkbox-box" aria-hidden="true"></span>
+                      <span class="pf-checkbox-text">
+                        <span class="pf-checkbox-label">Public Appearances</span>
+                        <span class="pf-checkbox-sub">Events, launches, meet &amp; greets</span>
+                      </span>
+                    </label>
+                    <label class="pf-checkbox-item">
+                      <input type="checkbox">
+                      <span class="pf-checkbox-box" aria-hidden="true"></span>
+                      <span class="pf-checkbox-text">
+                        <span class="pf-checkbox-label">Long-term Partnerships</span>
+                        <span class="pf-checkbox-sub">Ambassador &amp; ongoing collaborations</span>
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="pf-pref-divider" aria-hidden="true"></div>
+
+                <div class="pf-pref-section">
+                  <p class="pf-pref-title">Content Preferences</p>
+                  <div class="pf-tag-list" id="pf-tags">
+                    <button class="pf-tag selected" data-tag="Fashion"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Fashion</button>
+                    <button class="pf-tag selected" data-tag="Beauty"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Beauty</button>
+                    <button class="pf-tag selected" data-tag="Lifestyle"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Lifestyle</button>
+                    <button class="pf-tag" data-tag="Travel"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Travel</button>
+                    <button class="pf-tag" data-tag="Food"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Food &amp; Beverage</button>
+                    <button class="pf-tag" data-tag="Fitness"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Fitness</button>
+                    <button class="pf-tag" data-tag="Tech"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Technology</button>
+                    <button class="pf-tag" data-tag="Others"><svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>Others</button>
+                  </div>
+                </div>
+
+                <div class="pf-pref-divider" aria-hidden="true"></div>
+
+                <div class="pf-pref-section">
+                  <p class="pf-pref-title">Additional Notes <span style="font-weight:400;text-transform:none;letter-spacing:0;">(Optional)</span></p>
+                  <textarea class="pf-textarea" id="pf-notes" maxlength="500" rows="3" placeholder="Any additional preferences or notes for Arika..."></textarea>
+                  <span class="pf-char-count" id="pf-notes-count">0/500</span>
+                </div>
+
+                <button class="pf-save-btn" id="pf-save-prefs">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Save Preferences
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- TAB: Preferences -->
+          <div class="pf-tab-panel" id="tab-preferences" role="tabpanel">
+            <div class="pf-form-card">
+              <h3 class="pf-form-card-title">Collaboration Preferences</h3>
+              <p class="pf-form-card-sub">Manage your collaboration interests and availability.</p>
+              <div class="pf-pref-section">
+                <p class="pf-pref-title">Follower Range</p>
+                <select class="pf-select" style="max-width:280px;">
+                  <option>50k – 100k</option>
+                  <option>100k – 500k</option>
+                  <option>500k – 1M</option>
+                  <option>1M+</option>
+                </select>
+              </div>
+              <div class="pf-pref-divider"></div>
+              <div class="pf-pref-section">
+                <p class="pf-pref-title">Engagement Rate</p>
+                <select class="pf-select" style="max-width:280px;">
+                  <option>1 – 3%</option>
+                  <option selected>3 – 5%</option>
+                  <option>5 – 8%</option>
+                  <option>8%+</option>
+                </select>
+              </div>
+              <button class="pf-save-btn">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Save Preferences
+              </button>
+            </div>
+          </div>
+
+          <!-- TAB: Social & Audience -->
+          <div class="pf-tab-panel" id="tab-social" role="tabpanel">
+            <div class="pf-form-card">
+              <h3 class="pf-form-card-title">Social &amp; Audience</h3>
+              <p class="pf-form-card-sub">Your social media presence and audience insights.</p>
+              <div class="pf-social-grid" style="margin-bottom:24px;">
+                <div class="pf-stat-mini"><span class="pf-stat-mini-num">128K</span><span class="pf-stat-mini-label">Followers</span></div>
+                <div class="pf-stat-mini"><span class="pf-stat-mini-num">4.2%</span><span class="pf-stat-mini-label">Engagement Rate</span></div>
+                <div class="pf-stat-mini"><span class="pf-stat-mini-num">Mumbai</span><span class="pf-stat-mini-label">Top Location</span></div>
+                <div class="pf-stat-mini"><span class="pf-stat-mini-num">18–34</span><span class="pf-stat-mini-label">Primary Age Range</span></div>
+              </div>
+              <div class="pf-field">
+                <label class="pf-label" for="pf-ig-handle">Instagram Handle</label>
+                <input type="text" id="pf-ig-handle" class="pf-input" value="@priyasharma">
+              </div>
+              <div class="pf-field">
+                <label class="pf-label" for="pf-audience-loc">Primary Audience Location</label>
+                <input type="text" id="pf-audience-loc" class="pf-input" value="Mumbai, India">
+              </div>
+              <button class="pf-save-btn">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Save Changes
+              </button>
+            </div>
+          </div>
+
+          <!-- TAB: Portfolio -->
+          <div class="pf-tab-panel" id="tab-portfolio" role="tabpanel">
+            <div class="pf-form-card">
+              <h3 class="pf-form-card-title">Portfolio</h3>
+              <p class="pf-form-card-sub">Showcase your best work and past collaborations.</p>
+              <div class="pf-portfolio-grid">
+                <div class="pf-portfolio-item"><img src="../assets/images/cover insta.jpg" alt="Portfolio item 1" onerror="this.parentElement.style.background='#EADCC8'"></div>
+                <div class="pf-portfolio-item"><img src="../assets/images/cover insta (1).jpg" alt="Portfolio item 2" onerror="this.parentElement.style.background='#EADCC8'"></div>
+                <div class="pf-portfolio-item"><img src="../assets/images/aesthetics.jpg" alt="Portfolio item 3" onerror="this.parentElement.style.background='#EADCC8'"></div>
+                <div class="pf-portfolio-item pf-portfolio-add" role="button" tabindex="0" aria-label="Add portfolio item">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Add Work
+                </div>
+              </div>
+              <div class="pf-pref-divider"></div>
+              <div class="pf-field">
+                <label class="pf-label" for="pf-portfolio-link">Portfolio / Media Kit Link</label>
+                <input type="url" id="pf-portfolio-link" class="pf-input" placeholder="https://your-portfolio.com">
+              </div>
+              <button class="pf-save-btn">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Save Portfolio
+              </button>
+            </div>
+          </div>
+
+          <!-- TAB: Security -->
+          <div class="pf-tab-panel" id="tab-security" role="tabpanel">
+            <div class="pf-form-card">
+              <h3 class="pf-form-card-title">Security</h3>
+              <p class="pf-form-card-sub">Manage your account security settings.</p>
+              <div class="pf-security-item">
+                <div>
+                  <div class="pf-security-label">Password</div>
+                  <div class="pf-security-sub">Last changed 3 months ago</div>
+                </div>
+                <button class="pf-security-btn">Change Password</button>
+              </div>
+              <div class="pf-security-item">
+                <div>
+                  <div class="pf-security-label">Two-Factor Authentication</div>
+                  <div class="pf-security-sub">Add an extra layer of security</div>
+                </div>
+                <button class="pf-security-btn">Enable 2FA</button>
+              </div>
+              <div class="pf-security-item">
+                <div>
+                  <div class="pf-security-label">Active Sessions</div>
+                  <div class="pf-security-sub">1 active session — Chrome, Mumbai</div>
+                </div>
+                <button class="pf-security-btn">Manage Sessions</button>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /left column -->
+
+        <!-- RIGHT: sidebar cards -->
+        <div>
+
+          <!-- Profile Completion -->
+          <div class="pf-sidebar-card">
+            <h3 class="pf-card-title">Profile Completion</h3>
+            <div class="pf-completion-pct">80%</div>
+            <div class="pf-progress-bar"><div class="pf-progress-fill" style="width:80%;"></div></div>
+            <p class="pf-completion-sub">Complete your profile to get more collaboration opportunities.</p>
+          </div>
+
+          <!-- Account Status -->
+          <div class="pf-sidebar-card">
+            <h3 class="pf-card-title">Account Status</h3>
+            <div class="pf-status-row">
+              <span class="pf-status-dot" aria-hidden="true"></span>
+              <span class="pf-status-label">Approved</span>
+            </div>
+            <p class="pf-status-desc">Your profile is approved. You can receive and manage collaboration opportunities.</p>
+          </div>
+
+          <!-- Quick Info -->
+          <div class="pf-sidebar-card">
+            <h3 class="pf-card-title">Quick Info</h3>
+            <div class="pf-info-row">
+              <span class="pf-info-label">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-linecap="round"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-linecap="round"/></svg>
+                Member since
+              </span>
+              <span class="pf-info-value">12 Aug 2024</span>
+            </div>
+            <div class="pf-info-row">
+              <span class="pf-info-label">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-linecap="round"/></svg>
+                Total Collaborations
+              </span>
+              <span class="pf-info-value">8</span>
+            </div>
+            <div class="pf-info-row">
+              <span class="pf-info-label">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round"/></svg>
+                Completed
+              </span>
+              <span class="pf-info-value">5</span>
+            </div>
+            <div class="pf-info-row">
+              <span class="pf-info-label">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-linecap="round"/></svg>
+                Ongoing
+              </span>
+              <span class="pf-info-value">2</span>
+            </div>
+            <div class="pf-info-row">
+              <span class="pf-info-label">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Upcoming
+              </span>
+              <span class="pf-info-value">1</span>
+            </div>
+          </div>
+
+          <!-- Decorative card -->
+          <div class="pf-deco-card">
+            <div class="pf-deco-lines">
+              <span class="pf-deco-line">Creativity</span>
+              <span class="pf-deco-line">Creates</span>
+              <span class="pf-deco-line">Change</span>
+            </div>
+            <p class="pf-deco-sub">More brands.<br>Bigger stories.<br>Brighter tomorrows.</p>
+          </div>
+
+        </div><!-- /right sidebar -->
+
+      </div><!-- /pf-layout -->
+
+    </main>
+  </div><!-- /db-main -->
+</div><!-- /db-shell -->
+
+<script>
+(function () {
+
+  /* ---- Mobile sidebar ---- */
+  const sidebar = document.getElementById('db-sidebar');
+  const overlay = document.getElementById('db-overlay');
+  const menuBtn = document.getElementById('db-menu-btn');
+  if (menuBtn) menuBtn.addEventListener('click', () => { sidebar.classList.add('open'); overlay.classList.add('open'); menuBtn.setAttribute('aria-expanded','true'); });
+  if (overlay) overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); });
+
+  /* ---- User dropdown ---- */
+  const chip = document.getElementById('user-chip');
+  const dropdown = document.getElementById('user-dropdown');
+  if (chip && dropdown) {
+    chip.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = dropdown.classList.toggle('open');
+      chip.classList.toggle('open', open);
+      chip.setAttribute('aria-expanded', open);
+    });
+    chip.addEventListener('keydown', function(e) { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); chip.click(); } });
+    document.addEventListener('click', () => { dropdown.classList.remove('open'); chip.classList.remove('open'); chip.setAttribute('aria-expanded','false'); });
+  }
+
+  /* ---- Logout ---- */
+  document.getElementById('logout-btn').addEventListener('click', () => console.log('TODO: logout'));
+  document.getElementById('dropdown-logout').addEventListener('click', () => console.log('TODO: logout'));
+
+  /* ---- Profile photo upload ---- */
+  const photoInput = document.getElementById('pf-photo-input');
+  const avatarImg = document.getElementById('pf-avatar-img');
+  const topbarAvatar = document.getElementById('topbar-avatar');
+  const editTrigger = document.getElementById('pf-edit-photo-trigger');
+
+  if (editTrigger) editTrigger.addEventListener('click', () => photoInput && photoInput.click());
+  if (photoInput) {
+    photoInput.addEventListener('change', function() {
+      const file = this.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        if (avatarImg) avatarImg.src = e.target.result;
+        if (topbarAvatar) topbarAvatar.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+
+  /* ---- Tabs ---- */
+  const tabs = document.querySelectorAll('.pf-tab');
+  const panels = document.querySelectorAll('.pf-tab-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      panels.forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      this.setAttribute('aria-selected','true');
+      const panel = document.getElementById('tab-' + this.dataset.tab);
+      if (panel) panel.classList.add('active');
+    });
+  });
+
+  /* ---- Bio character counter ---- */
+  const bioEl = document.getElementById('pf-bio');
+  const bioCount = document.getElementById('pf-bio-count');
+  if (bioEl && bioCount) {
+    function updateBioCount() { bioCount.textContent = bioEl.value.length + '/500'; }
+    updateBioCount();
+    bioEl.addEventListener('input', updateBioCount);
+  }
+
+  /* ---- Notes character counter ---- */
+  const notesEl = document.getElementById('pf-notes');
+  const notesCount = document.getElementById('pf-notes-count');
+  if (notesEl && notesCount) {
+    notesEl.addEventListener('input', function() { notesCount.textContent = this.value.length + '/500'; });
+  }
+
+  /* ---- Content preference tags ---- */
+  document.querySelectorAll('.pf-tag').forEach(tag => {
+    tag.addEventListener('click', function() { this.classList.toggle('selected'); });
+  });
+
+  /* ---- Save buttons feedback ---- */
+  document.querySelectorAll('.pf-save-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const orig = this.innerHTML;
+      this.innerHTML = '<svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg> Saved!';
+      this.style.background = 'linear-gradient(135deg,#8CA77F 0%,#6a8f5e 100%)';
+      setTimeout(() => { this.innerHTML = orig; this.style.background = ''; }, 2000);
+    });
+  });
+
+})();
+</script>
+</body>
+</html>

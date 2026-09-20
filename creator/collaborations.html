@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arika Collabs | Collaborations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/pages/creator-dashboard.css">
+  <link rel="stylesheet" href="../css/pages/creator-collaborations.css">
+</head>
+<body class="creator-dashboard creator-collabs">
+
+<!-- Background decoration -->
+<div class="db-bg" aria-hidden="true">
+  <div class="db-bg-blob db-bg-blob--1"></div>
+  <div class="db-bg-blob db-bg-blob--2"></div>
+  <div class="db-bg-blob db-bg-blob--3"></div>
+</div>
+
+<!-- Mobile overlay -->
+<div class="db-overlay" id="db-overlay"></div>
+
+<div class="db-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="db-sidebar" id="db-sidebar" aria-label="Creator navigation">
+    <a href="../index.html" class="db-logo" aria-label="Arika Collabs home">
+      <span class="db-logo-main">ARIKA</span>
+      <span class="db-logo-sub">COLLABS</span>
+    </a>
+    <nav class="db-nav" aria-label="Main navigation">
+      <a href="dashboard.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor"/></svg>
+        </span>
+        Dashboard
+      </a>
+      <a href="collaborations.html" class="db-nav-item active" aria-current="page">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Collaborations
+      </a>
+      <a href="profile.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Profile
+      </a>
+      <a href="contact.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Contact Arika
+      </a>
+    </nav>
+    <div class="db-nav-divider" aria-hidden="true"></div>
+    <div class="db-logout">
+      <button class="db-nav-item" id="logout-btn" aria-label="Log out">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="db-main">
+
+    <!-- Top Header -->
+    <header class="db-header">
+      <div class="db-header-left">
+        <button class="db-mobile-btn" id="db-menu-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-linecap="round"/></svg>
+        </button>
+        <a href="../index.html" class="db-visit-btn" aria-label="Visit Arika Collabs website">
+          Visit Website
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="db-header-right">
+        <button class="db-notif-btn" aria-label="Notifications" id="notif-btn">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="db-notif-dot" aria-hidden="true"></span>
+        </button>
+        <div class="db-user-chip" id="user-chip" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+          <img src="../assets/images/avatar-priya.svg" alt="Priya Sharma" class="db-avatar">
+          <span class="db-user-name">Hi, <span>Priya</span></span>
+          <svg class="db-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="db-user-dropdown" id="user-dropdown" role="menu" aria-label="Account options">
+            <a href="profile.html" class="db-dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor"/></svg>
+              My Profile
+            </a>
+            <a href="contact.html" class="db-dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round"/></svg>
+              Contact Arika
+            </a>
+            <div class="db-dropdown-divider" aria-hidden="true"></div>
+            <button class="db-dropdown-item" id="dropdown-logout" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke="currentColor" stroke-linecap="round"/></svg>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="db-content" id="db-content">
+
+      <!-- Hero -->
+      <div class="db-hero">
+        <div class="db-hero-left">
+          <span class="db-eyebrow">Creator Portal</span>
+          <h1 class="db-hero-heading">Collaborations</h1>
+          <p class="db-hero-sub">All your brand collaborations in one place.</p>
+        </div>
+        <div class="db-hero-deco" aria-hidden="true">
+          <span class="db-deco-primary">Create</span>
+          <span class="db-deco-primary">Collaborate</span>
+          <span class="db-deco-primary">Grow</span>
+          <span class="db-deco-divider">&#47;</span>
+          <span class="db-deco-secondary">A Brighter</span>
+          <span class="db-deco-secondary">Tomorrow</span>
+          <span class="db-deco-secondary">Together.</span>
+          <span class="db-deco-star">&#10022;</span>
+        </div>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="cl-tabs" id="cl-tabs" role="tablist" aria-label="Filter collaborations">
+        <button class="cl-tab active" data-status="all" role="tab" aria-selected="true">
+          All <span class="cl-tab-count" id="count-all">12</span>
+        </button>
+        <button class="cl-tab" data-status="in-progress" role="tab" aria-selected="false">
+          Active <span class="cl-tab-count" id="count-active">2</span>
+        </button>
+        <button class="cl-tab" data-status="upcoming" role="tab" aria-selected="false">
+          Upcoming <span class="cl-tab-count" id="count-upcoming">3</span>
+        </button>
+        <button class="cl-tab" data-status="under-review" role="tab" aria-selected="false">
+          Under Review <span class="cl-tab-count" id="count-review">3</span>
+        </button>
+        <button class="cl-tab" data-status="completed" role="tab" aria-selected="false">
+          Completed <span class="cl-tab-count" id="count-completed">4</span>
+        </button>
+        <button class="cl-tab" data-status="cancelled" role="tab" aria-selected="false">
+          Cancelled <span class="cl-tab-count" id="count-cancelled">0</span>
+        </button>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="cl-filterbar">
+        <div class="cl-search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="11" cy="11" r="8" stroke="currentColor" stroke-linecap="round"/>
+            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-linecap="round"/>
+          </svg>
+          <input type="search" class="cl-search-input" id="cl-search" placeholder="Search campaigns, brands or content type..." aria-label="Search collaborations">
+        </div>
+
+        <div class="cl-select-wrap">
+          <svg class="cl-select-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="2" y="2" width="8" height="8" rx="1.5" stroke="currentColor"/>
+            <rect x="14" y="2" width="8" height="8" rx="1.5" stroke="currentColor"/>
+            <rect x="2" y="14" width="8" height="8" rx="1.5" stroke="currentColor"/>
+            <rect x="14" y="14" width="8" height="8" rx="1.5" stroke="currentColor"/>
+          </svg>
+          <select class="cl-select" id="cl-platform" aria-label="Filter by platform">
+            <option value="all">Instagram</option>
+            <option value="instagram">Instagram</option>
+          </select>
+          <svg class="cl-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="cl-select-wrap">
+          <svg class="cl-select-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6h16M7 12h10M10 18h4" stroke="currentColor" stroke-linecap="round"/>
+          </svg>
+          <select class="cl-select" id="cl-status" aria-label="Filter by status">
+            <option value="all">Status</option>
+            <option value="in-progress">In Progress</option>
+            <option value="upcoming">Upcoming</option>
+            <option value="under-review">Under Review</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+          <svg class="cl-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="cl-select-wrap">
+          <svg class="cl-select-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 6h18M6 12h12M9 18h6" stroke="currentColor" stroke-linecap="round"/>
+          </svg>
+          <select class="cl-select" id="cl-sort" aria-label="Sort collaborations">
+            <option value="deadline">Sort by</option>
+            <option value="deadline">Deadline</option>
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+            <option value="status">Status</option>
+          </select>
+          <svg class="cl-chevron" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Collaborations Table Card -->
+      <div class="cl-card">
+
+        <!-- Loading skeleton -->
+        <div id="cl-loading">
+          <table class="cl-table" style="min-width:700px;">
+            <thead>
+              <tr>
+                <th>Campaign / Brand</th>
+                <th>Content Type</th>
+                <th>Platform</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+          </table>
+          <div style="padding:8px 0;">
+            <div class="cl-skeleton cl-skeleton-row"></div>
+            <div class="cl-skeleton cl-skeleton-row"></div>
+            <div class="cl-skeleton cl-skeleton-row"></div>
+            <div class="cl-skeleton cl-skeleton-row"></div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div id="cl-table-container" style="display:none;">
+          <div class="cl-table-wrap">
+            <table class="cl-table" aria-label="Collaborations list">
+              <thead>
+                <tr>
+                  <th scope="col">Campaign / Brand</th>
+                  <th scope="col">Content Type</th>
+                  <th scope="col">Platform</th>
+                  <th scope="col">Deadline</th>
+                  <th scope="col">Status</th>
+                  <th scope="col">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="cl-tbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Empty state -->
+          <div id="cl-empty" class="cl-state" style="display:none;" aria-live="polite">
+            <div class="cl-state-icon">&#128203;</div>
+            <h3>No collaborations found</h3>
+            <p>Try adjusting your filters or search term.</p>
+            <button class="cl-reset-btn" id="cl-reset-btn">Clear Filters</button>
+          </div>
+
+          <!-- Pagination -->
+          <div class="cl-pagination" id="cl-pagination">
+            <span class="cl-pagination-info" id="cl-pagination-info">Showing 1–6 of 6 collaborations</span>
+            <div class="cl-pagination-center">
+              <button class="cl-page-btn" id="cl-prev" aria-label="Previous page" disabled>
+                <svg viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Previous
+              </button>
+              <div id="cl-page-nums" style="display:flex;gap:4px;"></div>
+              <button class="cl-page-btn" id="cl-next" aria-label="Next page">
+                Next
+                <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </div>
+            <div class="cl-pagination-right">
+              Rows per page
+              <select class="cl-rows-select" id="cl-rows-select" aria-label="Rows per page">
+                <option value="6" selected>6</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /cl-card -->
+
+      <!-- Bottom decorative element -->
+      <div class="cl-bottom-deco" aria-hidden="true">
+        <span class="cl-bottom-deco-text">Creativity</span>
+        <span class="cl-bottom-deco-text">Creates</span>
+        <span class="cl-bottom-deco-text">Change</span>
+      </div>
+
+    </main>
+  </div><!-- /db-main -->
+</div><!-- /db-shell -->
+
+<script src="../js/creator-services.js"></script>
+<script>
+(function () {
+
+  /* ---- State ---- */
+  let state = { status: 'all', search: '', platform: 'all', sort: 'deadline', page: 1, pageSize: 6 };
+
+  /* ---- Badge map ---- */
+  const BADGE = {
+    'in-progress':  ['db-badge--progress',  'In Progress'],
+    'under-review': ['db-badge--review',     'Under Review'],
+    'upcoming':     ['db-badge--upcoming',   'Upcoming'],
+    'completed':    ['db-badge--completed',  'Completed'],
+    'cancelled':    ['db-badge--cancelled',  'Cancelled']
+  };
+
+  /* ---- Instagram SVG icon ---- */
+  const igIcon = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="16" height="16">
+    <rect x="2" y="2" width="20" height="20" rx="5" stroke="#C13584" stroke-width="1.8"/>
+    <circle cx="12" cy="12" r="4" stroke="#C13584" stroke-width="1.8"/>
+    <circle cx="17.5" cy="6.5" r="1" fill="#C13584"/>
+  </svg>`;
+
+  /* ---- Calendar icon ---- */
+  const calIcon = `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`;
+
+  /* ---- Format date ---- */
+  function formatDate(iso) {
+    if (!iso) return '—';
+    return new Date(iso).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+  }
+
+  /* ---- Render a table row ---- */
+  function renderRow(c) {
+    const [badgeCls, badgeLabel] = BADGE[c.status] || ['', c.status];
+    const thumb = c.thumbnailUrl
+      ? `<img src="${c.thumbnailUrl}" alt="${c.brandName}" class="cl-thumb" onerror="this.style.background='#EADCC8';this.src=''">`
+      : `<div class="cl-thumb" aria-hidden="true"></div>`;
+    return `<tr>
+      <td>
+        <div class="cl-brand-cell">
+          ${thumb}
+          <div>
+            <span class="cl-brand-name">${c.brandName}</span>
+            <span class="cl-brand-sub">${c.campaignName}</span>
+          </div>
+        </div>
+      </td>
+      <td>
+        <span class="cl-content-type">${c.contentType}</span>
+        <span class="cl-content-sub">${c.deliverable}</span>
+      </td>
+      <td>
+        <span class="cl-platform">${igIcon} ${c.platform}</span>
+      </td>
+      <td>
+        <span class="cl-deadline">${calIcon} ${formatDate(c.deadline)}</span>
+      </td>
+      <td>
+        <span class="db-badge ${badgeCls}" aria-label="Status: ${badgeLabel}">${badgeLabel}</span>
+      </td>
+      <td class="cl-actions-cell">
+        <div class="cl-action-wrap">
+          <button class="cl-action-btn" aria-label="Actions for ${c.brandName}" aria-haspopup="true" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="5" r="1.2" fill="currentColor" stroke="currentColor" stroke-width="0.5"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="currentColor" stroke-width="0.5"/><circle cx="12" cy="19" r="1.2" fill="currentColor" stroke="currentColor" stroke-width="0.5"/></svg>
+          </button>
+          <div class="cl-action-menu" role="menu">
+            <a href="collaborations.html" class="cl-action-menu-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-linecap="round"/><circle cx="12" cy="12" r="3" stroke="currentColor"/></svg>
+              View Details
+            </a>
+            <a href="collaborations.html" class="cl-action-menu-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-linecap="round"/></svg>
+              View Campaign
+            </a>
+            <a href="contact.html" class="cl-action-menu-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round"/></svg>
+              Contact Arika
+            </a>
+          </div>
+        </div>
+      </td>
+    </tr>`;
+  }
+
+  /* ---- Render pagination numbers ---- */
+  function renderPageNums(current, total) {
+    const container = document.getElementById('cl-page-nums');
+    container.innerHTML = '';
+    for (let i = 1; i <= total; i++) {
+      const btn = document.createElement('button');
+      btn.className = 'cl-page-num' + (i === current ? ' active' : '');
+      btn.textContent = i;
+      btn.setAttribute('aria-label', 'Page ' + i);
+      btn.addEventListener('click', () => { state.page = i; load(); });
+      container.appendChild(btn);
+    }
+  }
+
+  /* ---- Main load function ---- */
+  async function load() {
+    document.getElementById('cl-loading').style.display = '';
+    document.getElementById('cl-table-container').style.display = 'none';
+    try {
+      const data = await creatorCollaborationService.getCollaborations({
+        status: state.status, search: state.search,
+        platform: state.platform, sort: state.sort,
+        page: state.page, pageSize: state.pageSize
+      });
+
+      const tbody = document.getElementById('cl-tbody');
+      const empty = document.getElementById('cl-empty');
+      const pagination = document.getElementById('cl-pagination');
+
+      if (!data.items.length) {
+        tbody.innerHTML = '';
+        empty.style.display = '';
+        pagination.style.display = 'none';
+      } else {
+        tbody.innerHTML = data.items.map(renderRow).join('');
+        empty.style.display = 'none';
+        pagination.style.display = '';
+
+        const totalPages = Math.ceil(data.total / state.pageSize);
+        const start = (state.page - 1) * state.pageSize + 1;
+        const end = Math.min(state.page * state.pageSize, data.total);
+        document.getElementById('cl-pagination-info').textContent =
+          `Showing ${start}–${end} of ${data.total} collaborations`;
+
+        document.getElementById('cl-prev').disabled = state.page <= 1;
+        document.getElementById('cl-next').disabled = state.page >= totalPages;
+        renderPageNums(state.page, totalPages);
+
+        /* Re-attach action menu listeners */
+        document.querySelectorAll('.cl-action-btn').forEach(btn => {
+          btn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const menu = this.nextElementSibling;
+            const isOpen = menu.classList.toggle('open');
+            this.setAttribute('aria-expanded', isOpen);
+            document.querySelectorAll('.cl-action-menu.open').forEach(m => {
+              if (m !== menu) { m.classList.remove('open'); m.previousElementSibling.setAttribute('aria-expanded', 'false'); }
+            });
+          });
+        });
+      }
+
+      document.getElementById('cl-loading').style.display = 'none';
+      document.getElementById('cl-table-container').style.display = '';
+    } catch (err) {
+      document.getElementById('cl-loading').style.display = 'none';
+      document.getElementById('cl-table-container').style.display = '';
+      document.getElementById('cl-empty').style.display = '';
+    }
+  }
+
+  /* ---- Update tab counts ---- */
+  function updateCounts() {
+    const counts = creatorCollaborationService.getStatusCounts();
+    document.getElementById('count-all').textContent = counts.all || 0;
+    document.getElementById('count-active').textContent = counts['in-progress'] || 0;
+    document.getElementById('count-upcoming').textContent = counts['upcoming'] || 0;
+    document.getElementById('count-review').textContent = counts['under-review'] || 0;
+    document.getElementById('count-completed').textContent = counts['completed'] || 0;
+    document.getElementById('count-cancelled').textContent = counts['cancelled'] || 0;
+  }
+
+  /* ---- Tab clicks ---- */
+  document.querySelectorAll('.cl-tab').forEach(tab => {
+    tab.addEventListener('click', function () {
+      document.querySelectorAll('.cl-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      this.classList.add('active');
+      this.setAttribute('aria-selected', 'true');
+      state.status = this.dataset.status;
+      state.page = 1;
+      load();
+    });
+  });
+
+  /* ---- Search ---- */
+  let searchTimer;
+  document.getElementById('cl-search').addEventListener('input', function () {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(() => { state.search = this.value; state.page = 1; load(); }, 300);
+  });
+
+  /* ---- Dropdowns ---- */
+  document.getElementById('cl-platform').addEventListener('change', function () { state.platform = this.value; state.page = 1; load(); });
+  document.getElementById('cl-status').addEventListener('change', function () { state.status = this.value; state.page = 1; load(); });
+  document.getElementById('cl-sort').addEventListener('change', function () { state.sort = this.value; state.page = 1; load(); });
+  document.getElementById('cl-rows-select').addEventListener('change', function () { state.pageSize = parseInt(this.value); state.page = 1; load(); });
+
+  /* ---- Pagination buttons ---- */
+  document.getElementById('cl-prev').addEventListener('click', () => { if (state.page > 1) { state.page--; load(); } });
+  document.getElementById('cl-next').addEventListener('click', () => { state.page++; load(); });
+
+  /* ---- Reset filters ---- */
+  document.getElementById('cl-reset-btn').addEventListener('click', () => {
+    state = { status: 'all', search: '', platform: 'all', sort: 'deadline', page: 1, pageSize: 6 };
+    document.getElementById('cl-search').value = '';
+    document.getElementById('cl-platform').value = 'all';
+    document.getElementById('cl-status').value = 'all';
+    document.getElementById('cl-sort').value = 'deadline';
+    document.querySelectorAll('.cl-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+    document.querySelector('.cl-tab[data-status="all"]').classList.add('active');
+    document.querySelector('.cl-tab[data-status="all"]').setAttribute('aria-selected', 'true');
+    load();
+  });
+
+  /* ---- Close action menus on outside click ---- */
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.cl-action-menu.open').forEach(m => {
+      m.classList.remove('open');
+      m.previousElementSibling.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* ---- Mobile sidebar ---- */
+  const sidebar = document.getElementById('db-sidebar');
+  const overlay = document.getElementById('db-overlay');
+  const menuBtn = document.getElementById('db-menu-btn');
+  if (menuBtn) menuBtn.addEventListener('click', () => { sidebar.classList.add('open'); overlay.classList.add('open'); menuBtn.setAttribute('aria-expanded', 'true'); });
+  if (overlay) overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); });
+
+  /* ---- User dropdown ---- */
+  const chip = document.getElementById('user-chip');
+  const dropdown = document.getElementById('user-dropdown');
+  if (chip && dropdown) {
+    chip.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isOpen = dropdown.classList.toggle('open');
+      chip.classList.toggle('open', isOpen);
+      chip.setAttribute('aria-expanded', isOpen);
+    });
+    chip.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); chip.click(); } });
+    document.addEventListener('click', () => { dropdown.classList.remove('open'); chip.classList.remove('open'); chip.setAttribute('aria-expanded', 'false'); });
+  }
+
+  /* ---- Logout ---- */
+  document.getElementById('logout-btn').addEventListener('click', () => console.log('TODO: logout'));
+  document.getElementById('dropdown-logout').addEventListener('click', () => console.log('TODO: logout'));
+
+  /* ---- Init ---- */
+  updateCounts();
+  load();
+
+})();
+</script>
+</body>
+</html>

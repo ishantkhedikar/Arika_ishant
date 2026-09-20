@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arika Collabs | Contact Arika</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/pages/creator-dashboard.css">
+  <link rel="stylesheet" href="../css/pages/creator-contact.css">
+</head>
+<body class="creator-dashboard creator-contact">
+
+<div class="db-bg" aria-hidden="true">
+  <div class="db-bg-blob db-bg-blob--1"></div>
+  <div class="db-bg-blob db-bg-blob--2"></div>
+  <div class="db-bg-blob db-bg-blob--3"></div>
+</div>
+<div class="db-overlay" id="db-overlay"></div>
+
+<div class="db-shell">
+
+  <!-- SIDEBAR -->
+  <aside class="db-sidebar" id="db-sidebar" aria-label="Creator navigation">
+    <a href="../index.html" class="db-logo" aria-label="Arika Collabs home">
+      <span class="db-logo-main">ARIKA</span>
+      <span class="db-logo-sub">COLLABS</span>
+    </a>
+    <nav class="db-nav" aria-label="Main navigation">
+      <a href="dashboard.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor"/></svg>
+        </span>
+        Dashboard
+      </a>
+      <a href="collaborations.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Collaborations
+      </a>
+      <a href="profile.html" class="db-nav-item">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Profile
+      </a>
+      <a href="contact.html" class="db-nav-item active" aria-current="page">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Contact Arika
+      </a>
+    </nav>
+    <div class="db-nav-divider" aria-hidden="true"></div>
+    <div class="db-logout">
+      <button class="db-nav-item" id="logout-btn" aria-label="Log out">
+        <span class="db-nav-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        Logout
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="db-main">
+
+    <header class="db-header">
+      <div class="db-header-left">
+        <button class="db-mobile-btn" id="db-menu-btn" aria-label="Open navigation menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-linecap="round"/></svg>
+        </button>
+        <a href="../index.html" class="db-visit-btn" aria-label="Visit Arika Collabs website">
+          Visit Website
+          <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H7M17 7v10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="db-header-right">
+        <button class="db-notif-btn" aria-label="Notifications">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="db-notif-dot" aria-hidden="true"></span>
+        </button>
+        <div class="db-user-chip" id="user-chip" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
+          <img src="../assets/images/avatar-priya.svg" alt="Priya Sharma" class="db-avatar">
+          <span class="db-user-name">Hi, <span>Priya</span></span>
+          <svg class="db-chevron" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="db-user-dropdown" id="user-dropdown" role="menu">
+            <a href="profile.html" class="db-dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor"/></svg>
+              My Profile
+            </a>
+            <a href="contact.html" class="db-dropdown-item" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round"/></svg>
+              Contact Arika
+            </a>
+            <div class="db-dropdown-divider" aria-hidden="true"></div>
+            <button class="db-dropdown-item" id="dropdown-logout" role="menuitem">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" stroke="currentColor" stroke-linecap="round"/></svg>
+              Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="db-content">
+
+      <!-- Page Hero heading -->
+      <div class="db-hero">
+        <div class="db-hero-left">
+          <span class="db-eyebrow">Creator Portal</span>
+          <h1 class="db-hero-heading">Contact Arika</h1>
+          <p class="db-hero-sub">We're here to help. Reach out to the Arika team for any support, queries or opportunities.</p>
+        </div>
+        <div class="db-hero-deco" aria-hidden="true">
+          <span class="db-deco-primary">Creators</span>
+          <span class="db-deco-primary">Brands</span>
+          <span class="db-deco-primary">Bigger Stories</span>
+          <span class="db-deco-divider">&#47;</span>
+          <span class="db-deco-secondary">A Brighter</span>
+          <span class="db-deco-secondary">Tomorrow</span>
+          <span class="db-deco-secondary">Together.</span>
+          <span class="db-deco-star">&#10022;</span>
+        </div>
+      </div>
+
+      <!-- Hero contact card -->
+      <div class="ct-hero">
+        <div class="ct-hero-left">
+          <div class="ct-hero-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="ct-hero-text">
+            <h2 class="ct-hero-title">Let's Grow Together</h2>
+            <p class="ct-hero-sub">Have a question, need support, or want to discuss a new opportunity? Our team typically responds within 24 hours.</p>
+            <span class="ct-hero-badge">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Responds within 24 hours
+            </span>
+          </div>
+        </div>
+        <div class="ct-hero-deco" aria-hidden="true">
+          <span class="ct-hero-deco-line">Your</span>
+          <span class="ct-hero-deco-line">Stories</span>
+          <span class="ct-hero-deco-line">Matter</span>
+          <span class="ct-hero-deco-star">&#10022;</span>
+        </div>
+      </div>
+
+      <!-- Main layout -->
+      <div class="ct-layout">
+        <!-- LEFT: forms -->
+        <div>
+
+          <!-- General Inquiry -->
+          <div class="ct-form-card">
+            <div class="ct-card-header">
+              <div class="ct-card-icon ct-card-icon--gold" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="ct-card-title">General Inquiry</h3>
+                <p class="ct-card-sub">For collaboration queries, support, or any other questions.</p>
+              </div>
+            </div>
+
+            <form id="form-general" novalidate>
+              <div class="ct-field">
+                <label class="ct-label" for="gen-subject">Subject <span style="color:#c0392b;">*</span></label>
+                <div class="ct-select-wrap">
+                  <svg class="ct-sel-icon" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h7" stroke="currentColor" stroke-linecap="round"/></svg>
+                  <select class="ct-select" id="gen-subject" required aria-required="true">
+                    <option value="" disabled selected>Select a subject</option>
+                    <option value="collaboration">Collaboration Query</option>
+                    <option value="support">General Support</option>
+                    <option value="payment">Payment Query</option>
+                    <option value="profile">Profile Help</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <svg class="ct-sel-chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+
+              <div class="ct-field">
+                <label class="ct-label" for="gen-message">Message <span style="color:#c0392b;">*</span></label>
+                <textarea class="ct-textarea" id="gen-message" maxlength="1000" rows="5" placeholder="Tell us how we can help you..." required aria-required="true"></textarea>
+                <span class="ct-char-count" id="gen-msg-count">0/1000 characters</span>
+              </div>
+
+              <div class="ct-field">
+                <label class="ct-label">Attachment <span class="ct-label-opt">(Optional)</span></label>
+                <div class="ct-upload" id="gen-upload-area">
+                  <input type="file" id="gen-attachment" accept=".png,.jpg,.jpeg,.pdf" aria-label="Upload attachment">
+                  <div class="ct-upload-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <span class="ct-upload-text">Click to upload or drag and drop</span>
+                  <span class="ct-upload-hint">PNG, JPG, PDF (Max 10 MB)</span>
+                  <span class="ct-upload-filename" id="gen-filename"></span>
+                </div>
+              </div>
+
+              <button type="submit" class="ct-btn-gold">
+                Send Message
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+          </div>
+
+          <!-- Opportunity Inquiry -->
+          <div class="ct-form-card">
+            <div class="ct-card-header">
+              <div class="ct-card-icon ct-card-icon--rose" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="ct-card-title">Opportunity Inquiry</h3>
+                <p class="ct-card-sub">Interested in new collaborations or want to be considered for upcoming campaigns.</p>
+              </div>
+            </div>
+
+            <form id="form-opportunity" novalidate>
+              <div class="ct-field">
+                <label class="ct-label" for="opp-type">Type of Opportunity <span style="color:#c0392b;">*</span></label>
+                <div class="ct-select-wrap">
+                  <svg class="ct-sel-icon" viewBox="0 0 24 24" fill="none"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <select class="ct-select" id="opp-type" required aria-required="true">
+                    <option value="" disabled selected>Select opportunity type</option>
+                    <option value="brand-collab">Brand Collaboration</option>
+                    <option value="paid-promo">Instagram Paid Promotion</option>
+                    <option value="product-review">Product Review</option>
+                    <option value="ambassador">Brand Ambassador</option>
+                    <option value="event">Event / Public Appearance</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <svg class="ct-sel-chev" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+              </div>
+
+              <div class="ct-field">
+                <label class="ct-label" for="opp-details">Brief Details <span style="color:#c0392b;">*</span></label>
+                <textarea class="ct-textarea" id="opp-details" maxlength="1000" rows="4" placeholder="Tell us about your interest..." required aria-required="true"></textarea>
+                <span class="ct-char-count" id="opp-details-count">0/1000 characters</span>
+              </div>
+
+              <div class="ct-field">
+                <label class="ct-label" for="opp-timeline">Expected Timeline <span class="ct-label-opt">(Optional)</span></label>
+                <input type="text" class="ct-input" id="opp-timeline" placeholder="e.g. Next month, 3 months, etc.">
+              </div>
+
+              <div class="ct-field">
+                <label class="ct-label" for="opp-budget">Budget Range <span class="ct-label-opt">(Optional)</span></label>
+                <input type="text" class="ct-input" id="opp-budget" placeholder="e.g. ₹10,000 – ₹50,000">
+              </div>
+
+              <div class="ct-field">
+                <label class="ct-label">Attach Portfolio / Media Kit <span class="ct-label-opt">(Optional)</span></label>
+                <div class="ct-upload" id="opp-upload-area">
+                  <input type="file" id="opp-attachment" accept=".pdf,.jpg,.jpeg,.png" aria-label="Upload portfolio or media kit">
+                  <div class="ct-upload-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </div>
+                  <span class="ct-upload-text">Click to upload or drag and drop</span>
+                  <span class="ct-upload-hint">PDF, JPG, PNG (Max 10 MB)</span>
+                  <span class="ct-upload-filename" id="opp-filename"></span>
+                </div>
+              </div>
+
+              <button type="submit" class="ct-btn-rose">
+                Send Inquiry
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+            </form>
+          </div>
+
+        </div><!-- /left forms -->
+
+        <!-- RIGHT sidebar -->
+        <div>
+
+          <!-- Quick Contact -->
+          <div class="ct-sidebar-card">
+            <h3 class="ct-sidebar-title">Quick Contact</h3>
+            <div class="ct-contact-row">
+              <div class="ct-contact-icon ct-contact-icon--gold" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <span class="ct-contact-label">hello@arikacollabs.com</span>
+                <span class="ct-contact-sub">General support &amp; queries</span>
+              </div>
+            </div>
+            <div class="ct-contact-row">
+              <div class="ct-contact-icon ct-contact-icon--rose" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              </div>
+              <div>
+                <span class="ct-contact-label">@arikacollabs</span>
+                <span class="ct-contact-sub">DM us on Instagram</span>
+              </div>
+            </div>
+            <div class="ct-contact-row">
+              <div class="ct-contact-icon ct-contact-icon--sage" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-linecap="round"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <span class="ct-contact-label">Response Time</span>
+                <span class="ct-contact-sub">Within 24 hours</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ -->
+          <div class="ct-sidebar-card">
+            <div class="ct-faq-header">
+              <h3 class="ct-sidebar-title" style="margin:0;">Frequently Asked Questions</h3>
+              <a href="#" class="ct-faq-viewall" aria-label="View all FAQs">
+                View All
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </a>
+            </div>
+            <div id="ct-faq-list" role="list"></div>
+          </div>
+
+          <!-- Decorative community card -->
+          <div class="ct-community-card">
+            <div class="ct-community-lines">
+              <span class="ct-community-line">More</span>
+              <span class="ct-community-line">Creators</span>
+              <span class="ct-community-line">Bigger Stories.</span>
+            </div>
+            <span class="ct-community-sub">Join a community</span>
+            <span class="ct-community-sub">that creates</span>
+            <span class="ct-community-sub">real impact.</span>
+            <span class="ct-community-star">&#10022;</span>
+          </div>
+
+        </div><!-- /right sidebar -->
+
+      </div><!-- /ct-layout -->
+
+    </main>
+  </div><!-- /db-main -->
+</div><!-- /db-shell -->
+
+<!-- Toast notification -->
+<div class="ct-toast" id="ct-toast" role="alert" aria-live="polite">
+  <div class="ct-toast-icon">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+  <div>
+    <span class="ct-toast-title" id="ct-toast-title">Message sent!</span>
+    <span class="ct-toast-sub" id="ct-toast-sub">We'll get back to you within 24 hours.</span>
+  </div>
+</div>
+
+<script src="../js/creator-services.js"></script>
+<script>
+(function () {
+
+  /* ---- Mobile sidebar ---- */
+  const sidebar = document.getElementById('db-sidebar');
+  const overlay = document.getElementById('db-overlay');
+  const menuBtn = document.getElementById('db-menu-btn');
+  if (menuBtn) menuBtn.addEventListener('click', () => { sidebar.classList.add('open'); overlay.classList.add('open'); menuBtn.setAttribute('aria-expanded','true'); });
+  if (overlay) overlay.addEventListener('click', () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); });
+
+  /* ---- User dropdown ---- */
+  const chip = document.getElementById('user-chip');
+  const dropdown = document.getElementById('user-dropdown');
+  if (chip && dropdown) {
+    chip.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const open = dropdown.classList.toggle('open');
+      chip.classList.toggle('open', open);
+      chip.setAttribute('aria-expanded', open);
+    });
+    chip.addEventListener('keydown', function(e) { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); chip.click(); } });
+    document.addEventListener('click', () => { dropdown.classList.remove('open'); chip.classList.remove('open'); chip.setAttribute('aria-expanded','false'); });
+  }
+
+  /* ---- Logout ---- */
+  document.getElementById('logout-btn').addEventListener('click', () => console.log('TODO: logout'));
+  document.getElementById('dropdown-logout').addEventListener('click', () => console.log('TODO: logout'));
+
+  /* ---- Character counters ---- */
+  function bindCounter(textareaId, countId) {
+    const ta = document.getElementById(textareaId);
+    const ct = document.getElementById(countId);
+    if (!ta || !ct) return;
+    ta.addEventListener('input', () => { ct.textContent = ta.value.length + '/1000 characters'; });
+  }
+  bindCounter('gen-message', 'gen-msg-count');
+  bindCounter('opp-details', 'opp-details-count');
+
+  /* ---- File upload display ---- */
+  function bindUpload(inputId, filenameId) {
+    const inp = document.getElementById(inputId);
+    const fn = document.getElementById(filenameId);
+    if (!inp || !fn) return;
+    inp.addEventListener('change', function() {
+      if (this.files[0]) {
+        fn.textContent = '✓ ' + this.files[0].name;
+        fn.style.display = 'block';
+      }
+    });
+  }
+  bindUpload('gen-attachment', 'gen-filename');
+  bindUpload('opp-attachment', 'opp-filename');
+
+  /* ---- Drag-over highlight ---- */
+  ['gen-upload-area','opp-upload-area'].forEach(id => {
+    const area = document.getElementById(id);
+    if (!area) return;
+    area.addEventListener('dragover', e => { e.preventDefault(); area.style.borderColor = 'rgba(212,175,55,0.60)'; area.style.background = 'rgba(255,255,255,0.70)'; });
+    area.addEventListener('dragleave', () => { area.style.borderColor = ''; area.style.background = ''; });
+    area.addEventListener('drop', e => { e.preventDefault(); area.style.borderColor = ''; area.style.background = ''; });
+  });
+
+  /* ---- Toast helper ---- */
+  function showToast(title, sub) {
+    const toast = document.getElementById('ct-toast');
+    document.getElementById('ct-toast-title').textContent = title;
+    document.getElementById('ct-toast-sub').textContent = sub;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+
+  /* ---- Form validation & submit ---- */
+  function validateAndSubmit(formId, titleText, subText) {
+    const form = document.getElementById(formId);
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const required = form.querySelectorAll('[required]');
+      let valid = true;
+      required.forEach(el => {
+        el.style.borderColor = '';
+        if (!el.value.trim()) {
+          el.style.borderColor = 'rgba(255,82,82,0.55)';
+          el.focus();
+          valid = false;
+        }
+      });
+      if (!valid) return;
+
+      const btn = form.querySelector('button[type="submit"]');
+      const origHTML = btn.innerHTML;
+      btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg> Sending...';
+      btn.disabled = true;
+
+      try {
+        await creatorInquiryService.submitInquiry({ form: formId });
+        form.reset();
+        form.querySelectorAll('.ct-upload-filename').forEach(el => { el.style.display = 'none'; el.textContent = ''; });
+        form.querySelectorAll('.ct-char-count').forEach(el => { el.textContent = '0/1000 characters'; });
+        showToast(titleText, subText);
+      } catch(err) {
+        showToast('Something went wrong', 'Please try again in a moment.');
+      } finally {
+        btn.innerHTML = origHTML;
+        btn.disabled = false;
+      }
+    });
+  }
+
+  validateAndSubmit('form-general', 'Message sent!', "We'll get back to you within 24 hours.");
+  validateAndSubmit('form-opportunity', 'Inquiry sent!', "Our team will review your opportunity and respond soon.");
+
+  /* ---- FAQ accordion ---- */
+  function renderFaqs() {
+    const faqs = creatorInquiryService.getFaqs();
+    const list = document.getElementById('ct-faq-list');
+    if (!list) return;
+    list.innerHTML = faqs.map((faq, i) => `
+      <div class="ct-faq-item" role="listitem">
+        <div class="ct-faq-q" role="button" tabindex="0" aria-expanded="false" aria-controls="faq-a-${i}" id="faq-q-${i}">
+          <span>${faq.q}</span>
+          <svg viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="ct-faq-a" id="faq-a-${i}" role="region" aria-labelledby="faq-q-${i}">${faq.a}</div>
+      </div>
+    `).join('');
+
+    list.querySelectorAll('.ct-faq-q').forEach(q => {
+      function toggle() {
+        const item = q.closest('.ct-faq-item');
+        const isOpen = item.classList.toggle('open');
+        q.setAttribute('aria-expanded', isOpen);
+      }
+      q.addEventListener('click', toggle);
+      q.addEventListener('keydown', e => { if (e.key==='Enter'||e.key===' ') { e.preventDefault(); toggle(); } });
+    });
+  }
+  renderFaqs();
+
+})();
+</script>
+</body>
+</html>
