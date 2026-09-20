@@ -171,6 +171,93 @@ body.auth-page {
   font-weight: 600;
 }
 
+/* ---------- ACCOUNT TYPE SELECTOR ---------- */
+.account-type-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.account-type-selector {
+  display: flex;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  gap: 4px;
+}
+
+.account-type-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-light-gray);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.account-type-btn:hover:not(.active) {
+  color: var(--color-pure-white);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.account-type-btn.active {
+  background: var(--color-signature-gold);
+  color: var(--color-charcoal-black);
+  box-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
+}
+
+/* Auth alert notification */
+.auth-alert {
+  display: none;
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  margin-bottom: var(--space-xs);
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-alert--error {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #FCA5A5;
+}
+
+.auth-alert--info {
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  color: var(--color-gold-light);
+}
+
+.auth-alert.visible {
+  display: flex;
+}
+
+.demo-credentials-card {
+  margin-top: var(--space-md);
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(212, 175, 55, 0.25);
+  border-radius: 8px;
+  font-size: 0.78rem;
+  color: var(--color-light-gray);
+  line-height: 1.5;
+}
+
+.demo-credentials-card strong {
+  color: var(--color-signature-gold);
+}
+
 /* ---------- RIGHT: VISUAL PANEL ---------- */
 .auth-visual {
   background: url('../../assets/images/dark-quote-visual.svg') center/cover;

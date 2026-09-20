@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/Admin/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collaborations | Arika Collabs Admin Portal</title>
+  <meta name="description" content="Track creator assignments, deliverables and payment milestones on Arika Collabs.">
+
+  <!-- Role Guard -->
+  <script src="auth/roleGuard.js"></script>
+
+  <!-- Google Fonts: Luxury Typography Palette -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="styles/admin-dashboard.css">
+</head>
+<body class="admin-body">
+
+  <div class="admin-ambient-bg" aria-hidden="true">
+    <div class="ambient-glow ambient-glow--top"></div>
+    <div class="ambient-glow ambient-glow--bottom"></div>
+    <svg class="ambient-curves" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
+      <path d="M-100 200 C300 100, 600 350, 1000 220 C1300 100, 1500 280, 1600 240" stroke="#D4AF37" stroke-width="1.2" stroke-opacity="0.18" fill="none"/>
+      <path d="M-50 450 C400 350, 700 600, 1100 420 C1400 300, 1550 500, 1650 460" stroke="#E6CA93" stroke-width="0.9" stroke-opacity="0.14" fill="none"/>
+      <path d="M0 700 C350 620, 800 800, 1200 660 C1450 580, 1580 720, 1650 680" stroke="#D4AF37" stroke-width="0.8" stroke-opacity="0.12" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="admin-shell" id="admin-app-shell">
+
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin Navigation">
+      <a href="../index.html" class="sidebar-brand" id="admin-logo-link">
+        <span class="brand-main">ARIKA<span class="brand-sparkle">&#10022;</span></span>
+        <span class="brand-sub">COLLABS</span>
+      </a>
+
+      <nav class="sidebar-nav" aria-label="Admin modules">
+        <a href="index.html" class="nav-link" id="nav-dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 10.5L12 3l9 7.5V20a1.5 1.5 0 01-1.5 1.5h-5a.5.5 0 01-.5-.5v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1v5a.5.5 0 01-.5.5h-5A1.5 1.5 0 013 20v-9.5z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="influencers.html" class="nav-link" id="nav-influencers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Influencers</span>
+        </a>
+
+        <a href="campaigns.html" class="nav-link" id="nav-campaigns">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.54 8.46a5 5 0 010 7.07" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.07 4.93a10 10 0 010 14.14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Campaigns</span>
+        </a>
+
+        <a href="collaborations.html" class="nav-link active" id="nav-collaborations" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="2 17 12 22 22 17" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="2 12 12 17 22 12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Collaborations</span>
+        </a>
+
+        <a href="inquiries.html" class="nav-link" id="nav-inquiries">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Inquiries</span>
+        </a>
+
+        <a href="content.html" class="nav-link" id="nav-content">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Content</span>
+        </a>
+
+        <a href="analytics.html" class="nav-link" id="nav-analytics">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="20" x2="18" y2="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="12" y1="20" x2="12" y2="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="6" y1="20" x2="6" y2="14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Analytics</span>
+        </a>
+
+        <a href="settings.html" class="nav-link" id="nav-settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-link nav-link--logout" id="sidebar-logout-btn" data-action="admin-logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Sign Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main" id="admin-main-view">
+      <header class="admin-header">
+        <div class="header-titles">
+          <span class="header-eyebrow">ADMIN PORTAL</span>
+          <h1 class="header-title">Collaborations</h1>
+          <p class="header-subtitle">Track creator assignments, deliverables and payment milestones.</p>
+        </div>
+
+        <div class="header-actions">
+          <div class="header-motto-stack">
+            <div class="header-motto-text">
+              BRANDS<br>CREATORS<br>BIGGER STORIES
+            </div>
+            <div class="header-motto-slash">/</div>
+            <div class="header-motto-text">
+              A BRIGHTER<br>TOMORROW<br>TOGETHER.
+              <div class="header-motto-star">✦</div>
+            </div>
+          </div>
+
+          <div class="admin-profile-pill" id="admin-profile-pill">
+            <div class="profile-avatar-wrap">
+              <img src="/assets/images/avatar-admin.svg" alt="Admin" class="profile-avatar">
+            </div>
+            <div class="profile-meta">
+              <span class="profile-name">Arika Admin</span>
+              <span class="profile-role">Super Administrator</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Key Metrics -->
+      <section class="stats-grid" id="portal-stats-grid" aria-label="Collaboration Key Metrics">
+        <!-- Rendered by PortalApp.initMetricCards -->
+      </section>
+
+      <!-- Filter Toolbar -->
+      <div class="admin-toolbar">
+        <div class="toolbar-left">
+          <div class="search-box-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+            <input type="text" id="collab-search-input" class="search-input" placeholder="Search by title, creator or brand...">
+          </div>
+
+          <select id="collab-type-filter" class="filter-dropdown-btn">
+            <option value="all">All Formats</option>
+            <option value="Reel">Reel</option>
+            <option value="Story">Story</option>
+            <option value="Post">Post</option>
+            <option value="Video">Video</option>
+          </select>
+
+          <select id="collab-status-filter" class="filter-dropdown-btn">
+            <option value="all">All Statuses</option>
+            <option value="Active">Active</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Scheduled">Scheduled</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+
+        <button class="btn-admin-primary" id="btn-add-collab">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="12" y1="5" x2="12" y2="19"/>
+            <line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          <span>Add Collaboration</span>
+        </button>
+      </div>
+
+      <!-- Data Table Card -->
+      <div class="table-card">
+        <div class="table-responsive">
+          <table class="admin-table" id="collaborations-table">
+            <thead>
+              <tr>
+                <th style="width: 44px; text-align: center;">
+                  <input type="checkbox" id="select-all-checkbox" class="table-checkbox" aria-label="Select all collaborations">
+                </th>
+                <th>Collaboration & Creator</th>
+                <th>Brand</th>
+                <th>Format</th>
+                <th>Deliverables</th>
+                <th>Compensation</th>
+                <th>Due Date</th>
+                <th>Status</th>
+                <th style="text-align: right; width: 60px;">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="collaborations-tbody">
+              <!-- Populated via script -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-footer">
+          <span class="footer-count" id="table-visible-count">Showing 1–6 of 12 collaborations</span>
+          <div class="pagination-wrap">
+            <button class="page-btn" disabled>&lt;</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">&gt;</button>
+          </div>
+          <div class="rows-per-page">
+            <span>Rows per page</span>
+            <select class="rows-select">
+              <option value="6">6</option>
+              <option value="12">12</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative Slogan Signature -->
+      <div class="footer-script-signature">
+        <span class="signature-text">Creators Drive Change</span>
+        <span class="signature-star">✦</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="auth/adminAuth.js"></script>
+  <script src="data/portalData.js"></script>
+  <script src="components/portalApp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = window.PORTAL_DATA.collaborations;
+      PortalApp.initMetricCards(data.stats);
+
+      const tbody = document.getElementById('collaborations-tbody');
+      if (tbody && data.items) {
+        tbody.innerHTML = data.items.map(item => `
+          <tr>
+            <td style="text-align: center;">
+              <input type="checkbox" class="table-checkbox" aria-label="Select ${item.title}">
+            </td>
+            <td>
+              <div class="table-profile-cell">
+                <img src="${item.creatorAvatar}" alt="${item.creator}" class="table-avatar" onerror="this.src='/assets/images/avatar-placeholder.svg'">
+                <div>
+                  <div class="profile-meta-title">${item.title}</div>
+                  <div class="profile-meta-sub">${item.creator}</div>
+                </div>
+              </div>
+            </td>
+            <td style="font-weight: 500; color: var(--admin-charcoal);">${item.brand}</td>
+            <td>
+              <span class="pill-tag pill-tag--${item.typeClass}">${item.type}</span>
+            </td>
+            <td style="color: #4B453D;">${item.deliverable}</td>
+            <td style="font-weight: 600; color: var(--admin-charcoal);">${item.compensation}</td>
+            <td style="color: var(--admin-text-muted); font-size: 12px;">${item.dueDate}</td>
+            <td>
+              <span class="status-pill-dot status-pill-dot--${item.statusClass}">${item.status}</span>
+            </td>
+            <td style="text-align: right;">
+              <button class="btn-action-dots" title="Options">⋮</button>
+            </td>
+          </tr>
+        `).join('');
+      }
+
+      PortalApp.initTableFilter('collaborations-table', 'collab-search-input', 'collab-type-filter');
+
+      const statusFilter = document.getElementById('collab-status-filter');
+      if (statusFilter) {
+        statusFilter.addEventListener('change', () => {
+          const val = statusFilter.value.toLowerCase();
+          const rows = tbody.querySelectorAll('tr');
+          rows.forEach(row => {
+            const text = row.innerText.toLowerCase();
+            row.style.display = (!val || val === 'all' || text.includes(val)) ? '' : 'none';
+          });
+        });
+      }
+    });
+  </script>
+</body>
+</html>

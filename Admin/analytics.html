@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <base href="/Admin/">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analytics | Arika Collabs Admin Portal</title>
+  <meta name="description" content="Track platform growth, campaign performance and collaboration metrics on Arika Collabs.">
+
+  <!-- Role Guard -->
+  <script src="auth/roleGuard.js"></script>
+
+  <!-- Google Fonts: Luxury Typography Palette -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="styles/admin-dashboard.css">
+</head>
+<body class="admin-body">
+
+  <div class="admin-ambient-bg" aria-hidden="true">
+    <div class="ambient-glow ambient-glow--top"></div>
+    <div class="ambient-glow ambient-glow--bottom"></div>
+    <svg class="ambient-curves" viewBox="0 0 1440 900" fill="none" preserveAspectRatio="none">
+      <path d="M-100 200 C300 100, 600 350, 1000 220 C1300 100, 1500 280, 1600 240" stroke="#D4AF37" stroke-width="1.2" stroke-opacity="0.18" fill="none"/>
+      <path d="M-50 450 C400 350, 700 600, 1100 420 C1400 300, 1550 500, 1650 460" stroke="#E6CA93" stroke-width="0.9" stroke-opacity="0.14" fill="none"/>
+      <path d="M0 700 C350 620, 800 800, 1200 660 C1450 580, 1580 720, 1650 680" stroke="#D4AF37" stroke-width="0.8" stroke-opacity="0.12" fill="none"/>
+    </svg>
+  </div>
+
+  <div class="admin-shell" id="admin-app-shell">
+
+    <!-- Sidebar Navigation -->
+    <aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin Navigation">
+      <a href="../index.html" class="sidebar-brand" id="admin-logo-link">
+        <span class="brand-main">ARIKA<span class="brand-sparkle">&#10022;</span></span>
+        <span class="brand-sub">COLLABS</span>
+      </a>
+
+      <nav class="sidebar-nav" aria-label="Admin modules">
+        <a href="index.html" class="nav-link" id="nav-dashboard">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 10.5L12 3l9 7.5V20a1.5 1.5 0 01-1.5 1.5h-5a.5.5 0 01-.5-.5v-5a1 1 0 00-1-1h-2a1 1 0 00-1 1v5a.5.5 0 01-.5.5h-5A1.5 1.5 0 013 20v-9.5z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Dashboard</span>
+        </a>
+
+        <a href="influencers.html" class="nav-link" id="nav-influencers">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M22 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Influencers</span>
+        </a>
+
+        <a href="campaigns.html" class="nav-link" id="nav-campaigns">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M11 5L6 9H2v6h4l5 4V5z" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M15.54 8.46a5 5 0 010 7.07" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.07 4.93a10 10 0 010 14.14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Campaigns</span>
+        </a>
+
+        <a href="collaborations.html" class="nav-link" id="nav-collaborations">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="2 17 12 22 22 17" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="2 12 12 17 22 12" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Collaborations</span>
+        </a>
+
+        <a href="inquiries.html" class="nav-link" id="nav-inquiries">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="22,6 12,13 2,6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Inquiries</span>
+        </a>
+
+        <a href="content.html" class="nav-link" id="nav-content">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Content</span>
+        </a>
+
+        <a href="analytics.html" class="nav-link active" id="nav-analytics" aria-current="page">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <line x1="18" y1="20" x2="18" y2="10" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="12" y1="20" x2="12" y2="4" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="6" y1="20" x2="6" y2="14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Analytics</span>
+        </a>
+
+        <a href="settings.html" class="nav-link" id="nav-settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <circle cx="12" cy="12" r="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="#" class="nav-link nav-link--logout" id="sidebar-logout-btn" data-action="admin-logout">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Sign Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="admin-main" id="admin-main-view">
+      <header class="admin-header">
+        <div class="header-titles">
+          <span class="header-eyebrow">ADMIN PORTAL</span>
+          <h1 class="header-title">Analytics</h1>
+          <p class="header-subtitle">Track platform growth, campaign performance, and collaboration metrics.</p>
+        </div>
+
+        <div class="header-actions">
+          <!-- Date Range Selector -->
+          <div class="filter-dropdown-btn" style="padding: 8px 14px; font-size: 12.5px;">
+            <span>📅 1 Aug 2024 – 30 Sep 2024</span>
+          </div>
+
+          <!-- Download Report Button -->
+          <button class="btn-admin-primary" style="padding: 8px 16px; font-size: 13px;" onclick="window.print()">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Download Report</span>
+          </button>
+
+          <div class="header-motto-stack">
+            <div class="header-motto-text">
+              BRANDS<br>CREATORS<br>BIGGER STORIES
+            </div>
+            <div class="header-motto-slash">/</div>
+            <div class="header-motto-text">
+              A BRIGHTER<br>TOMORROW<br>TOGETHER.
+              <div class="header-motto-star">✦</div>
+            </div>
+          </div>
+
+          <div class="admin-profile-pill" id="admin-profile-pill">
+            <div class="profile-avatar-wrap">
+              <img src="/assets/images/avatar-admin.svg" alt="Admin" class="profile-avatar">
+            </div>
+            <div class="profile-meta">
+              <span class="profile-name">Arika Admin</span>
+              <span class="profile-role">Super Administrator</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- 5 Metric Cards in a Row -->
+      <section class="analytics-metric-grid" id="analytics-stats-grid" aria-label="Analytics KPI Cards">
+        <!-- Populated via script -->
+      </section>
+
+      <!-- Row 1: Registrations Line Chart + 2 Donut Charts -->
+      <div class="analytics-grid-row">
+        <!-- Registrations Trend Card -->
+        <div class="analytics-card">
+          <div class="analytics-card-header">
+            <div>
+              <div class="analytics-title">Registrations Trend</div>
+              <div class="profile-meta-sub">Daily growth of creators vs brand accounts</div>
+            </div>
+            <div class="chart-legend">
+              <div><span class="legend-dot" style="background-color: #D4AF37;"></span> Influencers</div>
+              <div><span class="legend-dot" style="background-color: #3B82F6;"></span> Brands</div>
+            </div>
+          </div>
+          <div style="width: 100%; height: 160px; margin-top: 10px;">
+            <svg viewBox="0 0 500 160" width="100%" height="100%" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="grad-gold" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.3"/>
+                  <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <line x1="20" y1="130" x2="480" y2="130" stroke="#EFECE6" stroke-width="1"/>
+              <line x1="20" y1="80" x2="480" y2="80" stroke="#EFECE6" stroke-width="1"/>
+              <line x1="20" y1="30" x2="480" y2="30" stroke="#EFECE6" stroke-width="1"/>
+              <!-- Influencer path -->
+              <path d="M 30,120 Q 110,105 180,65 T 320,45 T 460,20 L 460,130 L 30,130 Z" fill="url(#grad-gold)"/>
+              <path d="M 30,120 Q 110,105 180,65 T 320,45 T 460,20" fill="none" stroke="#D4AF37" stroke-width="3" stroke-linecap="round"/>
+              <!-- Brand path -->
+              <path d="M 30,125 Q 120,118 200,95 T 340,70 T 460,50" fill="none" stroke="#3B82F6" stroke-width="2.5" stroke-dasharray="4,4" stroke-linecap="round"/>
+              <!-- Data dots -->
+              <circle cx="180" cy="65" r="4" fill="#D4AF37" stroke="#FFF" stroke-width="2"/>
+              <circle cx="320" cy="45" r="4" fill="#D4AF37" stroke="#FFF" stroke-width="2"/>
+              <circle cx="460" cy="20" r="4" fill="#D4AF37" stroke="#FFF" stroke-width="2"/>
+            </svg>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: #9CA3AF; margin-top: 6px;">
+            <span>01 Aug</span>
+            <span>15 Aug</span>
+            <span>01 Sep</span>
+            <span>15 Sep</span>
+            <span>30 Sep</span>
+          </div>
+        </div>
+
+        <!-- Campaign Status Donut Card -->
+        <div class="analytics-card">
+          <div class="analytics-card-header">
+            <div>
+              <div class="analytics-title">Campaign Status</div>
+              <div class="profile-meta-sub">Breakdown of 24 campaigns</div>
+            </div>
+          </div>
+          <div class="donut-container">
+            <div class="donut-graphic">
+              <svg class="donut-svg" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#F3F4F6" stroke-width="4"/>
+                <!-- Active: 50% (dasharray 44, 44) -->
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="44 44" stroke-dashoffset="0"/>
+                <!-- Completed: 33% (dasharray 29, 59) -->
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#3B82F6" stroke-width="4" stroke-dasharray="29 59" stroke-dashoffset="-44"/>
+                <!-- Draft: 17% (dasharray 15, 73) -->
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#D4AF37" stroke-width="4" stroke-dasharray="15 73" stroke-dashoffset="-73"/>
+              </svg>
+              <div class="donut-center-text">
+                <div class="donut-number">24</div>
+                <span class="donut-label">Total</span>
+              </div>
+            </div>
+            <div class="donut-legend-stack">
+              <div class="donut-legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background-color: #10B981;"></span> Active</span>
+                <span class="legend-value">12 (50%)</span>
+              </div>
+              <div class="donut-legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background-color: #3B82F6;"></span> Completed</span>
+                <span class="legend-value">8 (33%)</span>
+              </div>
+              <div class="donut-legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background-color: #D4AF37;"></span> Draft</span>
+                <span class="legend-value">4 (17%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collaboration Status Donut Card -->
+        <div class="analytics-card">
+          <div class="analytics-card-header">
+            <div>
+              <div class="analytics-title">Collaboration Status</div>
+              <div class="profile-meta-sub">Breakdown of 86 collaborations</div>
+            </div>
+          </div>
+          <div class="donut-container">
+            <div class="donut-graphic">
+              <svg class="donut-svg" viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#F3F4F6" stroke-width="4"/>
+                <!-- Active: 69% -->
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="60.7 27.3" stroke-dashoffset="0"/>
+                <!-- In Progress: 16% -->
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#3B82F6" stroke-width="4" stroke-dasharray="14 74" stroke-dashoffset="-60.7"/>
+                <!-- Completed: 15% -->
+                <circle cx="18" cy="18" r="14" fill="none" stroke="#D4AF37" stroke-width="4" stroke-dasharray="13.3 74.7" stroke-dashoffset="-74.7"/>
+              </svg>
+              <div class="donut-center-text">
+                <div class="donut-number">86</div>
+                <span class="donut-label">Total</span>
+              </div>
+            </div>
+            <div class="donut-legend-stack">
+              <div class="donut-legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background-color: #10B981;"></span> Active</span>
+                <span class="legend-value">59 (69%)</span>
+              </div>
+              <div class="donut-legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background-color: #3B82F6;"></span> In Progress</span>
+                <span class="legend-value">14 (16%)</span>
+              </div>
+              <div class="donut-legend-item">
+                <span class="legend-label"><span class="legend-dot" style="background-color: #D4AF37;"></span> Completed</span>
+                <span class="legend-value">13 (15%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: Top Categories Progress Bars + Platform Growth Area + Quick Actions -->
+      <div class="analytics-grid-row--2">
+        <!-- Top Categories Progress Bars -->
+        <div class="analytics-card">
+          <div class="analytics-card-header">
+            <div>
+              <div class="analytics-title">Top Campaign Categories</div>
+              <div class="profile-meta-sub">Share of campaign volume & budget</div>
+            </div>
+          </div>
+          <div class="category-bars-list" id="category-progress-list">
+            <!-- Populated via script -->
+          </div>
+        </div>
+
+        <!-- Platform Growth Area Chart -->
+        <div class="analytics-card">
+          <div class="analytics-card-header">
+            <div>
+              <div class="analytics-title">Platform Growth (Cumulative)</div>
+              <div class="profile-meta-sub">Quarterly expansion across creators & brand collabs</div>
+            </div>
+            <div class="chart-legend">
+              <div><span class="legend-dot" style="background-color: #D4AF37;"></span> Network</div>
+              <div><span class="legend-dot" style="background-color: #10B981;"></span> Collabs</div>
+            </div>
+          </div>
+          <div style="width: 100%; height: 210px; margin-top: 10px;">
+            <svg viewBox="0 0 450 180" width="100%" height="100%" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="grad-growth-green" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#10B981" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="#10B981" stop-opacity="0.0"/>
+                </linearGradient>
+              </defs>
+              <line x1="20" y1="150" x2="430" y2="150" stroke="#EFECE6" stroke-width="1"/>
+              <line x1="20" y1="100" x2="430" y2="100" stroke="#EFECE6" stroke-width="1"/>
+              <line x1="20" y1="50" x2="430" y2="50" stroke="#EFECE6" stroke-width="1"/>
+              <!-- Green collabs area -->
+              <path d="M 20,140 Q 120,130 200,90 T 320,60 T 430,25 L 430,150 L 20,150 Z" fill="url(#grad-growth-green)"/>
+              <path d="M 20,140 Q 120,130 200,90 T 320,60 T 430,25" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round"/>
+              <!-- Gold network line -->
+              <path d="M 20,145 Q 120,138 200,110 T 320,80 T 430,45" fill="none" stroke="#D4AF37" stroke-width="2.5" stroke-linecap="round"/>
+              <circle cx="430" cy="25" r="4.5" fill="#10B981" stroke="#FFF" stroke-width="2"/>
+              <circle cx="430" cy="45" r="4.5" fill="#D4AF37" stroke="#FFF" stroke-width="2"/>
+            </svg>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: #9CA3AF; margin-top: 4px;">
+            <span>Q1 FY24</span>
+            <span>Q2 FY24</span>
+            <span>Q3 FY24</span>
+            <span>Q4 FY24 (Projected)</span>
+          </div>
+        </div>
+
+        <!-- Quick Actions Card -->
+        <div class="analytics-card">
+          <div class="analytics-card-header">
+            <div>
+              <div class="analytics-title">Quick Actions</div>
+              <div class="profile-meta-sub">Direct portal navigation shortcuts</div>
+            </div>
+          </div>
+          <div class="analytics-actions-grid">
+            <a href="influencers.html" class="analytics-action-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+              </svg>
+              <span class="analytics-action-title">View All<br>Influencers</span>
+            </a>
+
+            <a href="campaigns.html" class="analytics-action-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#EA580C" stroke-width="2">
+                <path d="M11 5L6 9H2v6h4l5 4V5z"/>
+                <path d="M15.54 8.46a5 5 0 010 7.07"/>
+              </svg>
+              <span class="analytics-action-title">View All<br>Campaigns</span>
+            </a>
+
+            <a href="collaborations.html" class="analytics-action-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                <polyline points="2 17 12 22 22 17"/>
+              </svg>
+              <span class="analytics-action-title">View All<br>Collaborations</span>
+            </a>
+
+            <a href="inquiries.html" class="analytics-action-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#16A34A" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span class="analytics-action-title">View All<br>Inquiries</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: Bottom Tables Side by Side -->
+      <div class="bottom-tables-row">
+        <!-- Recent Campaigns Table -->
+        <div class="table-card" style="margin-bottom: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--admin-border);">
+            <span style="font-weight: 600; font-size: 15px; color: var(--admin-charcoal);">Recent Campaigns</span>
+            <a href="campaigns.html" style="font-size: 12.5px; color: var(--admin-gold-deep); text-decoration: none; font-weight: 600;">View All →</a>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Campaign</th>
+                  <th>Brand</th>
+                  <th>Budget</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 600; color: var(--admin-charcoal);">Summer Glow 2024</td>
+                  <td style="color: #4B453D;">Glowhaus Cosmetics</td>
+                  <td style="font-weight: 600;">₹4,50,000</td>
+                  <td><span class="status-pill-dot status-pill-dot--active">Active</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600; color: var(--admin-charcoal);">Monsoon Fit Series</td>
+                  <td style="color: #4B453D;">FlexFit India</td>
+                  <td style="font-weight: 600;">₹2,80,000</td>
+                  <td><span class="status-pill-dot status-pill-dot--active">Active</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600; color: var(--admin-charcoal);">Luxury Silk Edit</td>
+                  <td style="color: #4B453D;">Aura Haute Couture</td>
+                  <td style="font-weight: 600;">₹7,20,000</td>
+                  <td><span class="status-pill-dot status-pill-dot--scheduled">Scheduled</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Recent Inquiries Table -->
+        <div class="table-card" style="margin-bottom: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid var(--admin-border);">
+            <span style="font-weight: 600; font-size: 15px; color: var(--admin-charcoal);">Recent Inquiries</span>
+            <a href="inquiries.html" style="font-size: 12.5px; color: var(--admin-gold-deep); text-decoration: none; font-weight: 600;">View All →</a>
+          </div>
+          <div class="table-responsive">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Sender</th>
+                  <th>Subject</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 600; color: var(--admin-charcoal);">Rhea Singhania</td>
+                  <td style="color: var(--admin-text-muted); font-size: 12px;">Brand Partnership: Festive Diwali 2024</td>
+                  <td><span class="pill-tag pill-tag--brand">Brand</span></td>
+                  <td><span class="status-pill-dot status-pill-dot--unread">Unread</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600; color: var(--admin-charcoal);">Manish Varma</td>
+                  <td style="color: var(--admin-text-muted); font-size: 12px;">Creator Application & Onboarding</td>
+                  <td><span class="pill-tag pill-tag--creator">Creator</span></td>
+                  <td><span class="status-pill-dot status-pill-dot--review">In Review</span></td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 600; color: var(--admin-charcoal);">Tarun Chawla</td>
+                  <td style="color: var(--admin-text-muted); font-size: 12px;">Custom Campaign Quote</td>
+                  <td><span class="pill-tag pill-tag--brand">Brand</span></td>
+                  <td><span class="status-pill-dot status-pill-dot--replied">Replied</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative Slogan Signature -->
+      <div class="footer-script-signature" style="position: relative; margin-top: 30px; justify-content: flex-end; right: 0;">
+        <span class="signature-text">Creators Drive Change</span>
+        <span class="signature-star">✦</span>
+      </div>
+    </main>
+  </div>
+
+  <script src="auth/adminAuth.js"></script>
+  <script src="data/portalData.js"></script>
+  <script src="components/portalApp.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const data = window.PORTAL_DATA.analytics;
+
+      // 1. Render 5 KPI cards
+      const statsGrid = document.getElementById('analytics-stats-grid');
+      if (statsGrid && data.stats) {
+        statsGrid.innerHTML = data.stats.map(stat => `
+          <div class="stat-card" id="card-${stat.id}">
+            <div class="stat-card-header">
+              <div class="stat-icon-wrapper" style="background-color: ${stat.iconBg}; color: ${stat.iconColor};">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="stat-body">
+                <span class="stat-value">${stat.value}</span>
+                <span class="stat-label">${stat.title}</span>
+              </div>
+            </div>
+            <div class="stat-card-footer">
+              <div class="stat-trend-group">
+                <span class="trend-badge trend-badge--up">${stat.change}</span>
+                <span class="trend-period" style="font-size: 10.5px;">${stat.period}</span>
+              </div>
+              ${PortalApp.generateSparkline(stat.sparkColor)}
+            </div>
+          </div>
+        `).join('');
+      }
+
+      // 2. Render Top Categories Progress Bars
+      const catList = document.getElementById('category-progress-list');
+      if (catList && data.categories) {
+        catList.innerHTML = data.categories.map(cat => `
+          <div class="category-bar-item">
+            <div class="category-label-group">
+              <span class="category-icon">${cat.icon}</span>
+              <span>${cat.name.split(' ')[0]}</span>
+            </div>
+            <div class="category-track">
+              <div class="category-fill" style="width: ${cat.percent}%; background-color: ${cat.color};"></div>
+            </div>
+            <span class="category-percent">${cat.percent}%</span>
+          </div>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -29,15 +29,35 @@
 
         <!-- ---------- LOGIN FORM ---------- -->
         <form class="auth-form active" id="login-form">
-          <h2>Welcome back, Creator</h2>
-          <p class="auth-subtitle">Log in to access your dashboard.</p>
+          <h2 id="login-title">Welcome back, Creator</h2>
+          <p class="auth-subtitle" id="login-subtitle">Log in to access your dashboard.</p>
 
-          <label for="login-email">Email address</label>
-          <input type="email" id="login-email" placeholder="you@example.com" required>
+          <!-- Error Alert Banner -->
+          <div class="auth-alert auth-alert--error" id="login-error-alert" role="alert">
+            <span class="auth-alert__icon">&#9888;</span>
+            <span class="auth-alert__text" id="login-error-text">Invalid credentials.</span>
+          </div>
+
+          <!-- Account Type Selector -->
+          <div class="account-type-group">
+            <label>Account Type</label>
+            <div class="account-type-selector" role="radiogroup" aria-label="Select Account Type">
+              <button type="button" class="account-type-btn active" id="btn-role-user" data-role="user" role="radio" aria-checked="true">
+                <span>&#128100; User</span>
+              </button>
+              <button type="button" class="account-type-btn" id="btn-role-admin" data-role="admin" role="radio" aria-checked="false">
+                <span>&#128737; Admin</span>
+              </button>
+            </div>
+            <input type="hidden" id="login-account-type" value="user">
+          </div>
+
+          <label for="login-email">Email address or Username</label>
+          <input type="text" id="login-email" placeholder="you@example.com or username" autocomplete="username" required>
 
           <label for="login-password">Password</label>
           <div class="input-with-icon">
-            <input type="password" id="login-password" placeholder="••••••••" required>
+            <input type="password" id="login-password" placeholder="••••••••" autocomplete="current-password" required>
             <button type="button" class="toggle-password" aria-label="Show password">&#128065;</button>
           </div>
 
@@ -49,7 +69,14 @@
             <a href="forgot-password.html" class="link-muted">Forgot password?</a>
           </div>
 
-          <button type="submit" class="btn btn-gold btn-full">Login &rarr;</button>
+          <button type="submit" class="btn btn-gold btn-full" id="login-submit-btn">Login &rarr;</button>
+
+          <!-- Development Testing Helper -->
+          <div class="demo-credentials-card" id="demo-creds-hint">
+            <div><strong>Development Demo Accounts:</strong></div>
+            <div style="margin-top: 4px;">• <strong>Admin:</strong> <code>admin@arikacollabs.com</code> / <code>admin123</code></div>
+            <div>• <strong>User:</strong> <code>user@arikacollabs.com</code> / <code>user123</code></div>
+          </div>
 
           <div class="auth-divider"><span>OR</span></div>
 
@@ -95,6 +122,7 @@
 
   </div>
 
+  <script src="js/auth-config.js"></script>
   <script src="js/auth.js"></script>
 </body>
 </html>
