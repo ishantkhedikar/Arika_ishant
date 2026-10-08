@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="16" fill="#F8F4EB"/>
+  <rect width="200" height="200" rx="16" fill="#EED9A4" opacity="0.25"/>
+  <path d="M60 70 h80 v70 h-80 z M85 55 h30 l10 15 h-50 z" fill="#1A1A1A" opacity="0.55"/>
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle" opacity="0.5">CAMERA</text>
+</svg>

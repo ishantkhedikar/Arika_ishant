@@ -1,165 +1,200 @@
-<<<<<<< HEAD
-# Arika Collabs — Website Build (Complete Prototype)
+# Arika Collabs — React.js & Vite Platform
 
-Every page from the sitemap PDF now exists and is linked together. This is a
-static HTML/CSS/JS prototype — no real backend/database yet (see "What's
-NOT real yet" below).
+A modern, production-ready React.js application connecting brands with Instagram creators to create authentic content, drive high engagement, and deliver measurable campaign ROI.
 
-## How to run this locally
-
-`fetch()` (used to load the shared header/footer on public pages) is blocked
-on `file://` paths by browsers. Use a local server:
-
-**VS Code (easiest):** Install the **"Live Server"** extension, right-click
-`index.html`, choose **"Open with Live Server"**.
-
-**No extension:**
-```
-python3 -m http.server 5500
-```
-Then open `http://localhost:5500`.
+The project has been migrated from vanilla HTML/CSS/JS to a component-based React SPA powered by Vite and React Router, while preserving 100% of the visual identity, luxury styling, design tokens, color palette, and interactive workflows.
 
 ---
 
-## Full page list (all connected)
+## 1. Quick Start & Development
 
-### Public marketing pages (light theme, shared header/footer)
-| Page | File |
-|---|---|
-| Home | index.html |
-| About | about.html |
-| Our Work (filterable campaign grid) | our-work.html |
-| Instagram (filterable post grid) | instagram.html |
-| Contact (Creator/Brand toggle forms) | contact.html |
-| Privacy Policy | privacy-policy.html |
-| Terms of Use | terms-of-use.html |
-| Creator Guide | creator-guide.html |
-| Support (FAQ accordion) | support.html |
-
-### Auth pages (dark split-screen, full-screen, no header/footer)
-| Page | File |
-|---|---|
-| Creator Login + Register (tabs) | login.html |
-| Forgot Password | forgot-password.html |
-| Admin Login | admin-login.html |
-
-### Creator Portal (sidebar shell, reachable only after login)
-| Page | File |
-|---|---|
-| Dashboard | dashboard.html |
-| Collaborations | collaborations.html |
-| Profile | profile.html |
-
-### Admin Portal (sidebar shell, reachable only after admin login)
-| Page | File |
-|---|---|
-| Dashboard | admin-dashboard.html |
-| Influencers | admin-influencers.html |
-| Campaigns | admin-campaigns.html |
-| Collaborations | admin-collaborations.html |
-| Inquiries | admin-inquiries.html |
-| Content | admin-content.html |
-
-## How everything connects (click-through paths)
-
-```
-Home -> Login -> Dashboard (Creator Portal)
-Home -> Register (opens login.html#register tab) -> Dashboard
-Home -> footer "Admin Portal" link -> Admin Login -> Admin Dashboard
-Dashboard sidebar -> Collaborations / Profile / Contact Arika
-Admin Dashboard sidebar -> Influencers / Campaigns / Collaborations / Inquiries / Content
-Any public page footer -> About / Our Work / Instagram / Contact / Privacy / Terms / Creator Guide / Support
-Login page -> "Forgot password?" -> Forgot Password page
-```
-
-Every internal link across all pages has been checked and resolves to a real
-file — nothing points to a page that doesn't exist.
-
-## What's NOT real yet (important before going live)
-
-- **No real authentication.** Login/Register/Admin Login forms accept
-  anything and redirect regardless of what you type. Each has a `TODO`
-  comment in its JS file marking exactly where a real API call needs to go.
-- **No real data.** All names, stats, and collaborations (Priya Sharma,
-  Velvet Luxe, 103 influencers, etc.) are placeholder content matching your
-  PDF mockups — swap in real data once you have a backend/database.
-- **No real images.** Placeholder colored boxes stand in for photos —
-  drop real images into `assets/images/` and swap the CSS `background`
-  properties or `<img>` `src` attributes.
-- **No page-guarding.** Anyone can type `dashboard.html` or
-  `admin-dashboard.html` directly, since there's no session check yet.
-- **`logout.html`** doesn't exist — all Logout buttons currently just send
-  you back to the relevant login page, which is fine until real sessions
-  exist (then Logout should actually clear the session/token).
-
-## Four page-layout patterns (copy these for anything new)
-
-1. **Marketing** (index.html, about.html, our-work.html, instagram.html, contact.html) — light theme, shared header/footer via js/main.js, content in `.section` blocks.
-2. **Auth** (login.html, forgot-password.html, admin-login.html) — dark split-screen, full-screen, no header/footer.
-3. **Creator/Admin Portal** (dashboard.html, collaborations.html, profile.html, admin-*.html) — sidebar + topbar shell, no public header/footer.
-4. **Simple content pages** (privacy-policy.html, terms-of-use.html, creator-guide.html, support.html) — marketing pattern + css/pages/legal.css for plain prose/FAQ layout.
-
-## Folder structure
-
-```
-arika-collabs/
-├── index.html, about.html, our-work.html, instagram.html, contact.html
-├── login.html, forgot-password.html, admin-login.html
-├── dashboard.html, collaborations.html, profile.html
-├── admin-dashboard.html, admin-influencers.html, admin-campaigns.html,
-│   admin-collaborations.html, admin-inquiries.html, admin-content.html
-├── privacy-policy.html, terms-of-use.html, creator-guide.html, support.html
-├── _page-template.html          <- copy this for any NEW marketing page
-├── css/
-│   ├── variables.css            <- color palette, single source of truth
-│   ├── base.css                 <- resets, buttons, cards, forms, badges
-│   ├── header-footer.css        <- public nav + footer
-│   └── pages/                   <- one file per page/pattern
-│       ├── home.css, about.css, our-work.css, instagram.css, contact.css
-│       ├── auth.css              (shared by login/admin-login/forgot-password)
-│       ├── dashboard.css         (shared by all portal pages)
-│       └── legal.css             (shared by privacy/terms/guide/support)
-├── partials/
-│   ├── header.html               (logged-out public nav)
-│   ├── header-loggedin.html      (logged-in creator nav)
-│   └── footer.html
-├── js/
-│   ├── main.js        <- injects header/footer + active-link highlight
-│   ├── auth.js          (login/register tabs, password toggle)
-│   ├── admin-auth.js    (admin login redirect)
-│   ├── forgot-password.js
-│   ├── dashboard.js     (topbar icon placeholders, shared by all portal pages)
-│   ├── contact.js       (creator/brand toggle + form submit placeholder)
-│   ├── our-work.js       (generic filter-tab logic, reused by instagram.html)
-│   └── support.js        (FAQ accordion)
-└── assets/
-    ├── images/
-    └── icons/
-```
-
-## Suggested next steps
-
-1. Drop real photography into `assets/images/` and swap placeholder
-   background colors / `<img>` tags for real images.
-2. Fill in real copy where placeholder text exists.
-3. Build a backend (Node/Express, Firebase, etc.) and replace every `TODO`
-   in the JS files with real API calls.
-4. Add page-guarding so dashboard.html / admin-*.html redirect to login
-   if there's no valid session.
-
-## Git workflow (recommended for two people)
+### Installation
 
 ```bash
-git init
-git add .
-git commit -m "Complete connected prototype: all pages built and linked"
-git remote add origin <your-repo-url>
-git push -u origin main
+npm install
 ```
 
-**Golden rule:** if you ever need to change variables.css, base.css, or
-header-footer.css, tell your collaborator first — every page depends on
-these three files.
-=======
-# Arika-Web
->>>>>>> 5c58c8d68fd555e0c66380a098268aa301b3c368
+### Development Server
+
+Start the full development server powered by Vite:
+
+```bash
+npm run dev
+```
+
+The application and proxy endpoints are served at `http://localhost:3000`.
+
+### Production Build & Launch
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## 2. Technology Stack
+
+- **Frontend Core:** React 19, Vite 8, JavaScript (ESM)
+- **Routing:** React Router DOM (v7)
+- **State & Context:** React Context API (`AuthContext`), persistent session handling (`arika_auth_session` via `localStorage`)
+- **Backend API & Middleware:** Express.js, Node.js `crypto`, SheetJS (`xlsx`) for OpenXML spreadsheet generation
+- **Styling:** CSS variables, design token system, responsive typography, glassmorphism, gold accents, Playfair Display & Plus Jakarta Sans typography
+
+---
+
+## 3. Project Architecture
+
+```text
+arika-collabs/
+│
+├── public/
+│   └── assets/
+│       └── images/               # Creator headshots, campaign mockups, logos
+│
+├── server/
+│   └── apiRouter.js              # Express REST router for settings, team, reports, OTP
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Navbar.jsx            # Shared navigation with dynamic auth chips
+│   │   ├── Footer.jsx            # Shared site footer
+│   │   ├── CreatorCollage.jsx    # Auto-rotating 4-card hero collage
+│   │   ├── CreatorModal.jsx      # Creator profile card preview popup
+│   │   └── PerformanceChart.jsx  # SVG cubic-bezier performance curve
+│   │
+│   ├── layouts/
+│   │   ├── PublicLayout.jsx      # Public header, outlet, footer
+│   │   ├── CreatorLayout.jsx     # Creator dashboard shell with sidebar & mobile overlay
+│   │   └── AdminLayout.jsx       # Admin portal shell with ambient glows & top navigation
+│   │
+│   ├── pages/
+│   │   ├── Home.jsx              # Landing page with hero, collage, features, previews
+│   │   ├── About.jsx             # Mission, values, steps, stats
+│   │   ├── OurWork.jsx           # Case studies with category filters & sort
+│   │   ├── Instagram.jsx         # 12-tile Instagram grid with categories
+│   │   ├── Contact.jsx           # Controlled creator & brand inquiry forms
+│   │   ├── Login.jsx             # Split-screen login & register with role switch
+│   │   ├── ForgotPassword.jsx    # Reset password request form
+│   │   ├── CreatorGuide.jsx      # 4-step collaboration workflow guide
+│   │   ├── PrivacyPolicy.jsx     # Privacy terms & disclosures
+│   │   ├── TermsOfUse.jsx        # Platform terms of use
+│   │   ├── Support.jsx           # Interactive FAQ accordion & contact link
+│   │   │
+│   │   ├── creator/
+│   │   │   ├── Dashboard.jsx     # Creator metrics, recent campaigns, quick actions
+│   │   │   ├── Collaborations.jsx# Campaign deliverables list & draft upload modal
+│   │   │   ├── Profile.jsx       # Media kit, niches, availability, and contact info
+│   │   │   └── Contact.jsx       # Agency messaging & creator FAQs
+│   │   │
+│   │   └── admin/
+│   │       ├── Dashboard.jsx     # Live metrics, applications review, performance chart
+│   │       ├── Influencers.jsx   # Roster table, search, category filter, status actions
+│   │       ├── Campaigns.jsx     # Initiative management, budget tracking, create modal
+│   │       ├── Collaborations.jsx# Deliverables supervisor, review states, status modals
+│   │       ├── Inquiries.jsx     # Brand/Creator message inbox with reply dialog
+│   │       ├── Content.jsx       # Published reel/carousel catalog & engagement stats
+│   │       ├── Analytics.jsx     # Niche benchmarks & monthly growth trajectory
+│   │       └── Settings.jsx      # 6 tabs: General, Team, Alerts, Data, Platform, Security
+│   │
+│   ├── services/
+│   │   ├── api.js                # Client API requests for settings, backups, reports
+│   │   ├── authService.js        # Authentication credentials, session management
+│   │   ├── portalData.js         # Central models for influencers, campaigns, content
+│   │   └── creatorService.js     # Creator profile, dashboard, and collaborations
+│   │
+│   ├── context/
+│   │   └── AuthContext.jsx       # Authentication state, login, logout, role guards
+│   │
+│   ├── styles/                   # Ported design token CSS stylesheets
+│   ├── App.jsx                   # Central route registry & role-protected routes
+│   ├── main.jsx                  # React application entry point
+│   └── index.css                 # Master style bundle
+│
+├── Admin/services/
+│   └── settingsBackend.js        # Backend store, Excel exporter, single-use OTP
+│
+├── index.html                    # Vite HTML entry point with fonts & metadata
+├── vite.config.js                # Vite config with embedded Express API plugin
+├── server.js                     # Fullstack production server
+├── package.json
+└── README.md
+```
+
+---
+
+## 4. Application Routes
+
+### Public Pages
+- `/` — Homepage (Hero, Creator Collage, Services, Instagram Preview)
+- `/about` — About Arika (Agency philosophy, purpose, values, how we work)
+- `/our-work` (or `/work`) — Campaign Portfolio (Category filters, sorting, case study modal)
+- `/instagram` — Curated Instagram Feed (Tile categories & post showcase)
+- `/contact` — Contact & Proposals (Creator application / Brand inquiry tabs)
+- `/creator-guide` — Creator Guide (Step-by-step onboarding walkthrough)
+- `/privacy-policy` — Privacy Policy
+- `/terms-of-use` — Terms of Use
+- `/support` — FAQ & Support Center
+
+### Authentication
+- `/login` — Login screen (Creator vs Admin account selector, demo accounts helper)
+- `/register` — Register tab redirect
+- `/forgot-password` — Password reset request
+
+### Creator Portal (Protected: Creator Role)
+- `/creator/dashboard` — Creator Dashboard overview, metrics, deliverables list
+- `/creator/collaborations` — Campaign deliverables, filtering, draft submission modal
+- `/creator/profile` — Media kit profile, niches, follower tier, availability
+- `/creator/contact` — Agency team message dispatcher and creator FAQ
+
+### Admin Portal (Protected: Admin Role)
+- `/admin/dashboard` — Admin Command Center, application approval, performance chart
+- `/admin/influencers` — Creator talent roster, tier filtering, status actions
+- `/admin/campaigns` — Brand campaign manager, budget tracking, campaign creator
+- `/admin/collaborations` — Deliverables tracker, status inspector, contract states
+- `/admin/inquiries` — Inbound brand proposals & creator pitches with email replies
+- `/admin/content` — Published asset library, reel metrics, impressions, shares
+- `/admin/analytics` — Audience reach benchmarks, niche breakdown, growth trends
+- `/admin/settings` — 6-Tab Admin Settings Suite:
+  - `General`: Admin profile, branding, currencies, timezones
+  - `Team & Access`: Member directory, role modification, invite modal, audit logs
+  - `Notifications`: Granular channel matrix (Email/In-App/Push), test mail tool
+  - `Data & Reports`: 1-Click Excel exports, multi-sheet report builder
+  - `Platform`: Live feature toggles & maintenance mode
+  - `Security`: 2FA, Superuser authorization, 4-step data purge OTP workflow, full snapshot backup/restore
+
+---
+
+## 5. Development Credentials
+
+The platform includes demo accounts configured for instant role testing:
+
+- **Administrator:**
+  - Email: `admin@arikacollabs.com`
+  - Password: `admin123`
+  - Access: Full access to `/admin/*` portal
+- **Creator / User:**
+  - Email: `user@arikacollabs.com`
+  - Password: `user123`
+  - Access: Full access to `/creator/*` portal
+
+---
+
+## 6. Backend API Endpoints
+
+- `GET /api/settings` — Retrieve platform configurations
+- `POST /api/settings` — Save general and platform settings
+- `GET /api/settings/team` — List staff members and access logs
+- `POST /api/settings/team/invite` — Send staff invitation
+- `POST /api/settings/team/update-role` — Update member role (Administrator / Moderator)
+- `DELETE /api/settings/team/:id` — Revoke team member access
+- `POST /api/settings/notifications/test` — Dispatch verification email
+- `GET /api/settings/data/recent-exports` — Fetch generated report history
+- `GET /api/settings/data/export/:dataset` — Download binary OpenXML `.xlsx` dataset export
+- `POST /api/settings/data/generate-report` — Generate consolidated multi-sheet workbook
+- `GET /api/settings/security/status` — Get 2FA, session timeout and superuser status
+- `POST /api/settings/security/request-otp` — Request 5-minute cryptographic single-use OTP
+- `POST /api/settings/security/verify-delete` — Verify OTP and execute date-scoped data purge
+- `POST /api/settings/security/backup` — Create full platform JSON backup
+- `GET /api/settings/security/download-last-backup` — Download last JSON backup snapshot

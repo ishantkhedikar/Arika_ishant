@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" rx="16" fill="#F8F4EB"/>
+  <rect width="200" height="200" rx="16" fill="#DDA291" opacity="0.25"/>
+  <path d="M85 60 h30 v20 h10 a10 10 0 0 1 10 10 v70 a10 10 0 0 1 -10 10 h-50 a10 10 0 0 1 -10 -10 v-70 a10 10 0 0 1 10 -10 h10 z" fill="#1A1A1A" opacity="0.55"/>
+  <text x="100" y="185" font-family="Arial, sans-serif" font-size="10" fill="#1A1A1A" text-anchor="middle" opacity="0.5">PERFUME</text>
+</svg>

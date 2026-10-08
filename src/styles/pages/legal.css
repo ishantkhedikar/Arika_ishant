@@ -1,0 +1,85 @@
+.legal-hero {
+  padding-bottom: var(--space-lg);
+}
+.legal-hero h1 {
+  margin-bottom: var(--space-sm);
+}
+.legal-hero p {
+  color: var(--color-text-muted);
+}
+
+.legal-body {
+  max-width: 760px;
+}
+.legal-body h2 {
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-sm);
+  font-size: 1.3rem;
+}
+.legal-body p,
+.legal-body li {
+  color: var(--color-text-body);
+  margin-bottom: var(--space-md);
+  font-size: 0.95rem;
+}
+.legal-body ul,
+.legal-body ol {
+  padding-left: var(--space-lg);
+  list-style: disc;
+}
+.legal-body ol {
+  list-style: decimal;
+}
+
+/* ---------- SUPPORT FAQ ACCORDION ---------- */
+.faq-item {
+  border-bottom: 1px solid var(--color-extra-light);
+  padding: var(--space-md) 0;
+}
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-text-heading);
+}
+.faq-answer {
+  display: none;
+  margin-top: var(--space-sm);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+.faq-item.open .faq-answer {
+  display: block;
+}
+.faq-item.open .faq-question .chevron {
+  transform: rotate(180deg);
+}
+.chevron {
+  transition: transform 0.2s ease;
+}
+
+/* ---------- CREATOR GUIDE STEPS ---------- */
+.guide-steps {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+.guide-step {
+  display: flex;
+  gap: var(--space-md);
+}
+.guide-step__number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-signature-gold);
+  color: var(--color-pure-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}

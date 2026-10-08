@@ -1,0 +1,234 @@
+/* ==========================================================================
+   ARIKA COLLABS — BASE / GLOBAL STYLES
+   Import this AFTER variables.css in every page.
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-page);
+  color: var(--color-text-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  max-width: 100vw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+img, video, canvas, svg {
+  max-width: 100%;
+}
+img {
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  color: var(--color-text-heading);
+  line-height: 1.2;
+  font-weight: 600;
+}
+
+h1 { font-size: clamp(2rem, 4vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); }
+h3 { font-size: 1.25rem; }
+
+p {
+  color: var(--color-text-body);
+}
+
+/* ---------- LAYOUT WRAPPERS & UTILITIES ---------- */
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: clip;
+}
+
+.site-main {
+  flex: 1 0 auto;
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+.section {
+  padding: var(--space-3xl) 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+}
+
+.section--muted {
+  background-color: var(--color-bg-section);
+}
+
+.text-center { text-align: center; }
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-primary {
+  background-color: var(--color-charcoal-black);
+  color: var(--color-pure-white);
+}
+.btn-primary:hover {
+  background-color: var(--color-dark-gray);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--color-border);
+  color: var(--color-text-heading);
+}
+.btn-outline:hover {
+  border-color: var(--color-signature-gold);
+  color: var(--color-signature-gold);
+}
+
+.btn-gold {
+  background-color: var(--color-signature-gold);
+  color: var(--color-pure-white);
+}
+.btn-gold:hover {
+  background-color: var(--color-gold-light);
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+/* ---------- FORM ELEMENTS ---------- */
+input, select, textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-pure-white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-heading);
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--color-signature-gold);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- BADGES / TAGS ---------- */
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge--pending  { background: var(--color-badge); color: var(--color-charcoal-black); }
+.badge--progress { background: var(--color-link-alt); color: var(--color-charcoal-black); }
+.badge--success  { background: var(--color-success); color: var(--color-pure-white); }

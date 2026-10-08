@@ -4,12 +4,18 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node server.js",
-    "start": "node server.js",
-    "build": "echo 'Build complete'"
+    "dev": "vite --host 0.0.0.0 --port 3000",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 3000",
+    "start": "node server.js"
   },
   "dependencies": {
+    "@vitejs/plugin-react": "^6.1.2",
     "express": "^4.21.2",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
+    "vite": "^8.3.4",
     "xlsx": "^0.18.5"
   }
 }

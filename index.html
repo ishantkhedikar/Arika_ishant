@@ -1,169 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arika Collabs | We handle the deals, you shine.</title>
-  <meta name="description" content="Influencer marketing platform connecting brands with Instagram creators to create authentic content and drive engagement.">
-  <meta property="og:title" content="Arika Collabs | We handle the deals, you shine.">
-  <meta property="og:description" content="Influencer marketing platform connecting brands with Instagram creators to create authentic content and drive engagement.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arika Collabs | We handle the deals, you shine.</title>
+    <meta
+      name="description"
+      content="Influencer marketing platform connecting brands with Instagram creators to create authentic content and drive engagement."
+    />
+    <meta property="og:title" content="Arika Collabs | We handle the deals, you shine." />
+    <meta
+      property="og:description"
+      content="Influencer marketing platform connecting brands with Instagram creators to create authentic content and drive engagement."
+    />
 
-  <!-- 1. Design tokens FIRST -->
-  <link rel="stylesheet" href="css/variables.css">
-  <!-- 2. Global resets & base styles -->
-  <link rel="stylesheet" href="css/base.css">
-  <!-- 3. Shared header/footer styles -->
-  <link rel="stylesheet" href="css/header-footer.css">
-  <!-- 4. Page-specific styles LAST -->
-  <link rel="stylesheet" href="css/pages/home.css">
-</head>
-
-<!--
-  data-page="home"   → tells main.js which nav link to underline
-  data-header="..."  → omit for logged-out header, or set to "loggedin"
--->
-<body data-page="home">
-
-  <!-- Shared header gets injected here by js/main.js -->
-  <div id="header-placeholder"></div>
-
-  <!-- ============ HERO SECTION ============ -->
-  <section class="hero">
-    <div class="container hero__grid">
-      <div class="hero__content">
-        <span class="eyebrow">Influencer Marketing Agency</span>
-        <h1>We handle the deals, <span class="text-gold">you shine.</span></h1>
-        <p>
-          Arika Collabs connects brands with the right Instagram creators
-          to create authentic content, drive engagement and deliver real results.
-        </p>
-        <div class="hero__actions">
-          <a href="login.html" class="btn btn-outline">Login</a>
-          <a href="login.html#register" class="btn btn-primary">Register &rarr;</a>
-        </div>
-        <div class="hero__stats">
-          <div><strong>50+</strong><span>Campaigns Delivered</span></div>
-          <div><strong>100+</strong><span>Creators Onboarded</span></div>
-          <div><strong>15+</strong><span>Brands Trust Us</span></div>
-        </div>
-      </div>
-
-      <div class="hero__collage">
-        <!-- 4 offset cards: 1 large "main" + 3 category cards (Beauty/Lifestyle/Fashion).
-             Each is clickable (opens the creator popup) and auto-rotates through
-             the creator roster. Swap avatar paths in js/creator-collage.js for real photos. -->
-        <div class="creator-card hero-card hero-card--main">
-          <div class="creator-card__media"></div>
-          <div class="creator-card__badge"></div>
-        </div>
-        <div class="creator-card hero-card hero-card--beauty">
-          <div class="creator-card__media"></div>
-          <div class="creator-card__badge"></div>
-        </div>
-        <div class="creator-card hero-card hero-card--lifestyle">
-          <div class="creator-card__media"></div>
-          <div class="creator-card__badge"></div>
-        </div>
-        <div class="creator-card hero-card hero-card--fashion">
-          <div class="creator-card__media"></div>
-          <div class="creator-card__badge"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHAT WE DO ============ -->
-  <section class="section section--muted">
-    <div class="container text-center">
-      <span class="eyebrow">What We Do</span>
-      <h2>End-to-end influencer marketing, <span class="text-gold">made simple.</span></h2>
-      <p class="section-subtitle">
-        From strategy to execution, we manage everything so brands can focus on
-        what matters and creators can focus on creating.
-      </p>
-
-      <div class="grid feature-grid">
-        <div class="card feature-card">
-          <h3>Strategic Matching</h3>
-          <p>We connect brands with the right Instagram creators based on goals, audience and values.</p>
-        </div>
-        <div class="card feature-card">
-          <h3>Campaign Management</h3>
-          <p>We handle the entire process from planning to execution and delivery.</p>
-        </div>
-        <div class="card feature-card">
-          <h3>Content & Quality</h3>
-          <p>We ensure authentic, high-quality content that tells your brand's story.</p>
-        </div>
-        <div class="card feature-card">
-          <h3>Real Results</h3>
-          <p>We track performance and deliver insights that create long-term value.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ABOUT PREVIEW ============ -->
-  <section class="section">
-    <div class="container about-preview">
-      <div class="about-preview__image"></div>
-      <div>
-        <span class="eyebrow">About Arika Collabs</span>
-        <h2>A modern approach to influencer marketing.</h2>
-        <p>
-          We are a passionate team that bridges the gap between brands and
-          Instagram creators. Our focus is on meaningful collaborations,
-          authentic storytelling and measurable impact.
-        </p>
-        <a href="about.html" class="btn btn-outline">Learn More &rarr;</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ INSTAGRAM PREVIEW ============ -->
-  <section class="section section--muted">
-    <div class="container">
-      <div class="flex-between">
-        <div>
-          <span class="eyebrow">On Instagram</span>
-          <h2>Real collaborations. <span class="text-gold">Real stories.</span></h2>
-        </div>
-        <a href="instagram.html" class="btn btn-outline">Visit Instagram &nearr;</a>
-      </div>
-
-      <div class="grid instagram-strip">
-        <div class="ig-tile" style="background-image:url('assets/images/ig-tile-1.svg')"></div>
-        <div class="ig-tile" style="background-image:url('assets/images/ig-tile-2.svg')"></div>
-        <div class="ig-tile" style="background-image:url('assets/images/ig-tile-3.svg')"></div>
-        <div class="ig-tile" style="background-image:url('assets/images/ig-tile-4.svg')"></div>
-        <div class="ig-tile" style="background-image:url('assets/images/ig-tile-5.svg')"></div>
-        <div class="ig-tile" style="background-image:url('assets/images/ig-tile-6.svg')"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CREATOR PROFILE POPUP ============ -->
-  <div class="creator-modal-overlay" id="creator-modal-overlay" aria-hidden="true">
-    <div class="creator-modal" role="dialog" aria-modal="true" aria-labelledby="creator-modal-name">
-      <button type="button" class="creator-modal__close" aria-label="Close">&times;</button>
-      <div class="creator-modal__avatar"><img src="" alt=""></div>
-      <h3 class="creator-modal__name" id="creator-modal-name"></h3>
-      <span class="creator-modal__category"></span>
-      <div class="creator-modal__stats">
-        <div><strong class="creator-modal__followers"></strong><span>Followers</span></div>
-        <div><strong class="creator-modal__location"></strong><span>Location</span></div>
-      </div>
-      <p class="creator-modal__bio"></p>
-      <div class="creator-modal__actions">
-        <a href="#" class="btn btn-primary creator-modal__view-profile">View Profile &rarr;</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Shared footer gets injected here by js/main.js -->
-  <div id="footer-placeholder"></div>
-
-  <script src="js/main.js"></script>
-  <script src="js/creator-collage.js"></script>
-</body>
+    <!-- Google Fonts & Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

@@ -1,0 +1,143 @@
+.eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--color-rose-gold);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+.text-gold { color: var(--color-signature-gold); }
+.section-subtitle {
+  max-width: 600px;
+  margin: var(--space-md) auto var(--space-xl);
+  color: var(--color-text-muted);
+}
+
+/* ---------- HERO ---------- */
+.about-hero__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+.about-hero p { margin: var(--space-md) 0 var(--space-xl); max-width: 480px; }
+.stat-row {
+  display: flex;
+  gap: var(--space-2xl);
+  flex-wrap: wrap;
+}
+.stat-row strong {
+  display: block;
+  font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+  font-family: var(--font-heading);
+}
+.stat-row span {
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  line-height: 1.3;
+}
+.about-hero__visual {
+  height: 420px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  background: url('../../assets/images/hero-about.jpg') center/cover;
+}
+
+/* ---------- PURPOSE ---------- */
+.purpose-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: center;
+}
+.purpose-visual {
+  height: 280px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  background: url('../../assets/images/hero-collab-panel1.jpg') center/cover;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+  color: var(--color-charcoal-black);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+.purpose-grid p { margin: var(--space-md) 0 var(--space-lg); }
+.purpose-tags { display: flex; flex-direction: column; gap: var(--space-sm); font-size: 0.9rem; }
+
+/* ---------- VALUES ---------- */
+.values-grid { grid-template-columns: repeat(4, 1fr); margin-top: var(--space-xl); text-align: left; }
+.value-icon { font-size: 1.5rem; }
+.values-grid h3 { margin: var(--space-sm) 0; font-size: 1.05rem; }
+.values-grid p { font-size: 0.85rem; }
+
+/* ---------- HOW WE WORK ---------- */
+.how-we-work {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+}
+.how-we-work p { margin: var(--space-md) 0 var(--space-lg); }
+.steps-list { display: flex; flex-direction: column; gap: var(--space-lg); }
+.steps-list li { display: flex; flex-direction: column; gap: 4px; padding-left: var(--space-md); border-left: 2px solid var(--color-signature-gold); }
+.steps-list strong { color: var(--color-text-heading); }
+.steps-list span { font-size: 0.85rem; color: var(--color-text-muted); }
+
+/* ---------- CTA ---------- */
+.cta-banner__visual {
+  height: 220px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: var(--radius-lg);
+  background: url('../../assets/images/dark-quote-visual.svg') center/cover;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+.cta-banner__visual span { color: var(--color-pure-white); font-weight: 700; }
+.cta-banner__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+.cta-banner__box p { font-size: 0.85rem; color: var(--color-text-muted); }
+
+@media (max-width: 1024px) {
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .about-hero__grid, .purpose-grid, .how-we-work { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .stat-row { gap: var(--space-xl); }
+}
+
+@media (max-width: 600px) {
+  .stat-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+  .about-hero__visual { height: 260px; }
+  .purpose-visual { height: 220px; }
+  .cta-banner__visual { height: 180px; }
+  .cta-banner__box { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .stat-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}

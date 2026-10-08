@@ -1,0 +1,56 @@
+/* ==========================================================================
+   ARIKA COLLABS — Master React Style Bundle
+   Preserves all design tokens, typography, luxury colors, cards, and animations.
+   ========================================================================== */
+
+@import './styles/variables.css';
+@import './styles/base.css';
+@import './styles/header-footer.css';
+
+@import './styles/pages/home.css';
+@import './styles/pages/about.css';
+@import './styles/pages/our-work.css';
+@import './styles/pages/instagram.css';
+@import './styles/pages/contact.css';
+@import './styles/pages/auth.css';
+@import './styles/pages/legal.css';
+
+@import './styles/pages/creator-dashboard.css';
+@import './styles/pages/creator-collaborations.css';
+@import './styles/pages/creator-profile.css';
+@import './styles/pages/creator-contact.css';
+
+@import './styles/admin/admin-dashboard.css';
+@import './styles/admin/admin-settings.css';
+
+/* Fix for any global helpers */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Global responsive safety rules */
+html, body, #root {
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img, svg, canvas, video {
+  max-width: 100%;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
+}
