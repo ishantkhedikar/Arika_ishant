@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import CreatorCollage from '../components/CreatorCollage';
-import CreatorModal from '../components/CreatorModal';
 
 export default function Home() {
-  const [selectedCreator, setSelectedCreator] = useState(null);
-
   return (
     <div className="home-page">
       {/* ============ 1. HERO SECTION ============ */}
@@ -30,7 +27,7 @@ export default function Home() {
             </div>
           </div>
 
-          <CreatorCollage onSelectCreator={(c) => setSelectedCreator(c)} />
+          <CreatorCollage />
         </div>
       </section>
 
@@ -253,9 +250,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Creator Profile Modal */}
-      <CreatorModal creator={selectedCreator} onClose={() => setSelectedCreator(null)} />
     </div>
   );
 }
